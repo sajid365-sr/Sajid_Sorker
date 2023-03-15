@@ -26,7 +26,7 @@ export const worked_data : WorkedTypes[] = [
       deadline : "Aug 21 - present",
       title: "Full stack developer",
       company : "Fiverr",
-      url : "https://fiverr.com/raihanhosen001",
+      url : "",
    },
    { 
       id: 2,

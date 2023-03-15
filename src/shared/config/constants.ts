@@ -13,8 +13,8 @@ export const projects : ProjectTypes[] = [
         title : "Portfolio website",
         description : "Personal Website V2 Second iteration of my personal website. Designed and developed with a conscious effort to avoid Personal Website V1 Second iteration of my personal website. and Also I add Blog section and saleing system",
         tech : [ "Next js 13", "Tailwind CSS", "Express js", "MongoDB" ],
-        code : 'https://github.com/raihanhosen011/developer-portfolio',
-        live : 'https://raihanhosen.com',
+        code : '',
+        live : 'https://sajidsorker.com',
         thumnail : "portfolio-v2.png",
         featured : true
     },
@@ -40,7 +40,7 @@ export const projects : ProjectTypes[] = [
         title : "Amazon clone",
         description : "I clone World Largest E-commerce website Amazon using react js",
         tech : [ "React js", "Redux" ],
-        code : 'https://github.com/raihanhosen011/amazon-nw',
+        code : '',
         live : 'https://amazon-nw.vercel.app/',
         thumnail : "amazon.png"
     },
