@@ -8,7 +8,13 @@ import { navData } from '@config/constants'
 import AnimatedTextCharacter from '@components/motion/AnimatedTextCherecter'
 import Button from '@components/Button'
 
+
+
+
+
 const Header = () => {
+
+  
 
   // motion
   const container = {
@@ -44,14 +50,14 @@ const Header = () => {
     <header className='top-0 w-full z-50 relative py-[30px] max-w-[94%] mx-auto md:block hidden right-0 left-0' >
        <div className='flex items-center justify-between' >
 
-          <Link href='/' className='flex' >
+        <Link href='/' className='flex' >
              <AnimatedTextCharacter 
                 text='S'
-                className='text-4xl font-semibold text-sky-700' 
+                className='font-logo font-light text-5xl mt-3 text-sky-400' 
              />
              <AnimatedTextCharacter 
                 text='D'
-                className='text-4xl text-slate-700/80' 
+                className='text-7xl text-gray-200 -ml-5 -z-10 font-extralight' 
              />
           </Link>
 
