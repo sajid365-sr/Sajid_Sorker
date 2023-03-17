@@ -5,7 +5,7 @@ const Meta = () => {
       <link rel="canonical" href="https://www.sajidsorker.com/"></link>
       <link rel="pingback" href="https://www.sajidsorker.com/"></link>
 
-      <title> Sajid Sorker : Portfolio </title>
+      <title> Sajid Sorker</title>
 
       <meta name="description" content='Highly motivated and very passionate Full Stack Developer with two years of experience in JavaScript, React js, Next js, Firebase, Tailwind CSS, Node js, Express js, MongoDB' />
       <meta
@@ -15,7 +15,7 @@ const Meta = () => {
       
       <meta name="google-site-verification" content="3yNZMVW_AuwCoLV0wk7WxYfo2hsZ4J8nVspHQQ5vg30" />
       <meta property="og:site_name" content="Sajid Sorker" />
-      <meta property="og:title" content='Sajid Sorker | Portfolio' />
+      <meta property="og:title" content='Sajid Sorker' />
       <meta property="og:description" content='Web Development Company, Best Web development agency, Web Development Services, Website Development Company, Website Development Services, Website Development Bangladesh, Web Development Bangladesh, Company, Services, Bangladesh' />
       <meta property="og:url" content='https://sajidsorker.com/' />
       <meta property="og:image" content='https://sajidsorker.com/images/sajid-sorker.jpg' />

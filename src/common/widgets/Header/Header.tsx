@@ -50,7 +50,7 @@ const Header = () => {
                 className='text-4xl font-semibold text-sky-700' 
              />
              <AnimatedTextCharacter 
-                text='ajid.'
+                text='D'
                 className='text-4xl text-slate-700/80' 
              />
           </Link>

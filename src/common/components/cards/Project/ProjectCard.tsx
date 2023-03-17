@@ -11,7 +11,7 @@ import { motionStep } from '@config/motion'
 import { ProjectTypes } from '@config/types'
 
 
-const ProjectCard = ({ live, thumnail, code, title, description, tech } : ProjectTypes) => {
+const ProjectCard = ({ live, thumbnail, code, title, description, tech } : ProjectTypes) => {
   return (
         <motion.div 
             variants={{  
@@ -42,8 +42,8 @@ const ProjectCard = ({ live, thumnail, code, title, description, tech } : Projec
                     <Link href={`${live}`} >
                         <div className='h-[200px] w-full relative rounded-xl overflow-hidden'>
                             <Image
-                                src={`/images/projects/${thumnail}`} 
-                                blurDataURL={`/images/projects/${thumnail}`}
+                                src={`/images/projects/${thumbnail}`} 
+                                blurDataURL={`/images/projects/${thumbnail}`}
                                 className='transition-all duration-300 group-hover:scale-110 group-hover:rotate-3'
                                 layout='fill'
                                 objectFit='cover'

@@ -9,16 +9,16 @@ import { cx } from '@config/constants'
 import { ProjectTypes } from '@config/types'
 
 
-const Featured = ({ secondary, live, thumnail, code, title, description, tech } : ProjectTypes) => {
+const Featured = ({ secondary, live, thumbnail, code, title, description, tech } : ProjectTypes) => {
   
   const __renderImage = () => {
      return (
         <div className='col-span-7 relative hidden sm:block' >
-            <Link href={`${live}`} >
+            <Link href={`${live}`} target="_blank" >
                 <div className='h-[350px] w-full relative rounded-xl overflow-hidden'>
                     <Image 
-                        src={`/images/projects/${thumnail}`} 
-                        blurDataURL={`/images/projects/${thumnail}`} 
+                        src={`/images/projects/${thumbnail}`} 
+                        blurDataURL={`/images/projects/${thumbnail}`} 
                         className='transition-all duration-300 group-hover:scale-110 group-hover:rotate-3'
                         layout='fill'
                         objectFit='cover'

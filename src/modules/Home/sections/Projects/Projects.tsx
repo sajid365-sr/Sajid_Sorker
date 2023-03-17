@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 //
 import Featured from '@components/cards/Project/Featured'
 import ProjectCard from '@components/cards/Project/ProjectCard'
-import Button from '@components/Button'
 import { fadeTop, fadeLeft, motionStep } from '@config/motion'
 import { projects } from '@config/constants'
 import { ProjectTypes } from '@config/types'
+import Button from '@components/Button'
 
 
 const Projects = () => {
@@ -18,9 +18,9 @@ const Projects = () => {
           Some Things I’ve Built
         </motion.h1>
 
-        <div className='space-y-20' >
+        <div className='lg:mb-72 mb-32' >
           {projects.filter((e: ProjectTypes) => e.featured == true).map((e: ProjectTypes, i: number) => (
-            <motion.div key={i} variants={fadeTop} {...motionStep} >
+            <motion.div key={i} variants={fadeTop} {...motionStep} className="lg:my-32 my-24" >
               <Featured {...e} secondary={i % 2 === 0 ? false : true} />
             </motion.div>
           ))} 
@@ -32,9 +32,9 @@ const Projects = () => {
           ))} 
         </div>
 
-        {/* <div className='flex items-center justify-center' >
+        <div className='flex items-center justify-center' >
           <Button outlined > See More </Button>
-        </div> */}
+        </div>
 
     </section>
   )

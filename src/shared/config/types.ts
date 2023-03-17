@@ -25,7 +25,7 @@ export type ProjectTypes = {
     tech : Array<string>,
     code ?: string,
     live : string,
-    thumnail : string,
+    thumbnail : string,
     featured ?: boolean,
     secondary ?: boolean,
 }
