@@ -12,7 +12,7 @@ export const projects : ProjectTypes[] = [
     {
         title : "Portfolio website",
         description : "This is my personal website. Designed and developed with a conscious effort.",
-        tech : [ "Next js 13", "Tailwind CSS", "Express js", "MongoDB" ],
+        tech : [ "Next js 13", "Tailwind CSS", "TypeScript", "Framer motion" ],
         code : '',
         live : 'https://sajidsorker.com',
         thumbnail : "portfolio-v2.png",

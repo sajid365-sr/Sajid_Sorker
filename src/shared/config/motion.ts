@@ -1,4 +1,4 @@
-import { Variants } from 'framer-motion';
+
 
 // fade up spring
 export const fadeUpSpring = {
