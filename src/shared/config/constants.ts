@@ -38,19 +38,11 @@ export const projects : ProjectTypes[] = [
     },
 
     {
-        title : "Amazon clone",
-        description : "I clone World Largest E-commerce website Amazon using react js",
-        tech : [ "React js", "Redux" ],
+        title : "Next Store",
+        description : "I have created an e-commerce store using Next js, React, Sanity io and live payment integration with Stripe",
+        tech : [ "Next js", "React", "Sanity io", "Stripe" ],
         code : '',
-        live : 'https://amazon-nw.vercel.app/',
-        thumbnail : "amazon.png"
-    },
-
-    {
-        title : "Powermall",
-        description : "This is an largest e-commerce website of bangladesh",
-        tech : [ "next js", "tailwind css", "MERN" ],
-        live : 'https://powermall.com',
-        thumbnail : "powermall.png"
+        live : 'https://next-store-blue.vercel.app/',
+        thumbnail : "next_store.png"
     }
 ]

@@ -21,7 +21,7 @@ const AnimatedTextCharacter = ({ text, className } : { text : string, className 
       y: 0,
       transition: {
         type: "spring",
-        damping: 12,
+        damping: 20,
         stiffness: 100,
       },
     },

@@ -37,7 +37,7 @@ const Button: FC<ButtonProps> = ({
   const OUTLINED_CLASS = 
     `!bg-transparent border border-[1.2px] !text-sky-400 border-sky-400 hover:!bg-sky-400/10`
 
-  const SECONDAY_CLASS = 
+  const SECONDARY_CLASS = 
     `!bg-slate-800 hover:!bg-slate-700 active:!text-slate-400 !text-slate-200`
 
   const _renderLoading = () => {
@@ -74,7 +74,7 @@ const Button: FC<ButtonProps> = ({
         className={cx(
           CLASSES,
           outlined && OUTLINED_CLASS,
-          secondary && SECONDAY_CLASS
+          secondary && SECONDARY_CLASS
         )}
         onClick={onClick}
         target={targetBlank ? "_blank" : undefined}
@@ -91,7 +91,7 @@ const Button: FC<ButtonProps> = ({
       className={cx(
         CLASSES,
         outlined && OUTLINED_CLASS,
-        secondary && SECONDAY_CLASS
+        secondary && SECONDARY_CLASS
       )}
       onClick={onClick}
       type={type}

@@ -47,7 +47,7 @@ export const fadeLeft = {
 };
 
 
-// fade left
+// fade bottom
 export const fadeBottom = {
   visible: {
     opacity: 1,
@@ -71,7 +71,7 @@ export const fadeBottom = {
 };
 
 
-// fade left
+// fade right
 export const fadeRight = {
   visible: {
     opacity: 1,
@@ -189,7 +189,7 @@ export const worked_3 = {
 };
 
 
-// inital step
+// initial step
 export const motionStep = {
   initial : "hidden",
   whileInView : "visible",
