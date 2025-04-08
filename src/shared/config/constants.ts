@@ -17,7 +17,6 @@ export const projects: ProjectTypes[] = [
     code: "",
     live: "https://sajidsorker.com",
     thumbnail: "portfolio-v2.png",
-    featured: true,
   },
   {
     title: "Traveon",
