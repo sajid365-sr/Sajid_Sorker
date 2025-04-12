@@ -5,7 +5,7 @@ import { ProjectTypes } from "./types";
 export const cx = classNames;
 
 // nav data
-export const navData = ["About", "Works", "Contact"];
+export const navData = ["About", "Contact"];
 
 // project data
 export const projects: ProjectTypes[] = [
