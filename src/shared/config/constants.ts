@@ -71,23 +71,23 @@ export const projects: ProjectTypes[] = [
     featured: true,
   },
 
-  {
-    title: "Jahid Enterprise",
-    description:
-      "A business portfolio website. I use this system for front end “REACT, Tailwind CSS, Axios, react-query” and for Backend “Node js, Express js, MongoDB",
-    tech: ["React", "tailwind CSS", "MongoDB", "Node js", "Firebase"],
-    live: "https://jahid-enterprise-r9d2.vercel.app/",
-    thumbnail: "jahid_enterprise.png",
-  },
+  // {
+  //   title: "Jahid Enterprise",
+  //   description:
+  //     "A business portfolio website. I use this system for front end “REACT, Tailwind CSS, Axios, react-query” and for Backend “Node js, Express js, MongoDB",
+  //   tech: ["React", "tailwind CSS", "MongoDB", "Node js", "Firebase"],
+  //   live: "https://jahid-enterprise-r9d2.vercel.app/",
+  //   thumbnail: "jahid_enterprise.png",
+  // },
 
-  {
-    title: "Atonu Enterprise",
-    description:
-      "A business portfolio website. I use this system for front end “REACT, Tailwind CSS, Axios, react-query” and for Backend “Node js, Express js, MongoDB",
-    tech: ["React", "tailwind CSS", "MongoDB", "Node js", "Firebase"],
-    live: "https://atonu-enterprise.web.app/",
-    thumbnail: "atonu_enterprise.png",
-  },
+  // {
+  //   title: "Atonu Enterprise",
+  //   description:
+  //     "A business portfolio website. I use this system for front end “REACT, Tailwind CSS, Axios, react-query” and for Backend “Node js, Express js, MongoDB",
+  //   tech: ["React", "tailwind CSS", "MongoDB", "Node js", "Firebase"],
+  //   live: "https://atonu-enterprise.web.app/",
+  //   thumbnail: "atonu_enterprise.png",
+  // },
 
   {
     title: "Next Store",
