@@ -42,15 +42,9 @@ const Header = () => {
   return (
     <header className="top-0 w-full z-50 relative py-[30px] max-w-[94%] mx-auto md:block hidden right-0 left-0">
       <div className="flex items-center justify-between">
-        <Link href="/" className="flex">
-          <AnimatedTextCharacter
-            text="S"
-            className="font-logo font-light text-5xl mt-2 text-sky-400"
-          />
-          <AnimatedTextCharacter
-            text="D"
-            className="text-6xl text-gray-200 -ml-5 -z-10 font-extralight"
-          />
+        <Link href="/" className="flex text-4xl gap-3 font-light">
+          <AnimatedTextCharacter text="Sajid" className="   text-sky-400" />
+          <AnimatedTextCharacter text="Sorker" className=" text-gray-200 " />
         </Link>
 
         <motion.ul
@@ -72,7 +66,7 @@ const Header = () => {
             </motion.a>
           ))}{" "}
           <a href="sajid-sorker-resume.pdf" download>
-            <Button>Resume</Button>
+            <Button sizeClass="px-5 py-2">Resume</Button>
           </a>{" "}
         </motion.ul>
       </div>

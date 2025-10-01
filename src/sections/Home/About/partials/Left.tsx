@@ -2,8 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { IoMdArrowDropright } from "react-icons/io";
 //
-import { skills } from "@modules/Home/config/constanst";
+
 import { fadeTop, motionStep } from "@config/motion";
+import { skills } from "@config/constants";
 
 const Left = () => {
   return (

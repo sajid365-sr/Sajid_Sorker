@@ -6,7 +6,7 @@ const GetInTouch = () => {
   return (
     <section id="contact" className="text-center my-4">
       <h1 className="flex items-center gap-2 text-md justify-center font-normal text-sky-400">
-        <span className=" font-mono">03. </span>
+        <span className=" font-mono">04. </span>
         What next?
       </h1>
 
@@ -15,13 +15,17 @@ const GetInTouch = () => {
         Get In Touch{" "}
       </h1>
 
-      <p className="text-slate-400 max-w-[500px] mx-auto my-3 mb-10">
-        Although I’m not currently looking for any new opportunities, my inbox
-        is always open. Whether you have a question or just want to say hi, I’ll
-        try my best to get back to you!
+      <p className="text-slate-400 max-w-[600px] mx-auto my-3 mb-10">
+        Actively seeking new opportunities! I’m always open to exciting roles
+        and collaborations. If you have an opportunity, a question, or just want
+        to connect, feel free to reach out—I’d be happy to chat!
       </p>
 
-      <Button href="mailto:contact@sajidsorker.com" outlined>
+      <Button
+        sizeClass="px-5 py-2"
+        href="mailto:sajid.sorker@sajidsorker.com"
+        outlined
+      >
         {" "}
         Say Hello{" "}
       </Button>

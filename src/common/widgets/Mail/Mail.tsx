@@ -19,7 +19,7 @@ const Mail = () => {
           href="mailto:contact@sajidsorker.com"
           className="text-[15px] text-slate-400 hover:text-sky-400 cursor-pointer transition-all duration-300 hover:translate-y-[-10px] rl"
         >
-          contact@sajidsorker.com
+          sajid.sorker@sajidsorker.com
         </Link>
       </div>
     </motion.div>

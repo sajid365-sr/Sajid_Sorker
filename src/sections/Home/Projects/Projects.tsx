@@ -10,13 +10,13 @@ import Button from "@components/Button";
 
 const Projects = () => {
   return (
-    <section id="works">
+    <section id="projects">
       <motion.h1
         variants={fadeLeft}
         {...motionStep}
         className="flex items-center gap-2 text-3xl font-medium text-slate-300 mb-12"
       >
-        <span className="text-sky-400 font-mono">02. </span>
+        <span className="text-sky-400 font-mono">03. </span>
         Some Things I’ve Built
       </motion.h1>
 
@@ -44,7 +44,10 @@ const Projects = () => {
       </div>
 
       <div className="flex items-center justify-center">
-        <Button outlined> See More </Button>
+        <Button sizeClass="px-5 py-2" outlined>
+          {" "}
+          See More{" "}
+        </Button>
       </div>
     </section>
   );
