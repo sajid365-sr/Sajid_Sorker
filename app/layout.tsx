@@ -7,6 +7,7 @@ import Meta from "@components/Meta";
 import { Urbanist } from "next/font/google";
 import Glassify from "@components/Glassify";
 import Footer from "@widgets/Footer";
+import MouseGlow from "@components/MouseGlow";
 
 // font
 const urbanist = Urbanist({ subsets: ["latin"] });
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Socials />
         <Mail />
         <Glassify />
+        <MouseGlow />
 
         <Header />
         {children}

@@ -1,4 +1,5 @@
 import About from "components/Home/About";
+import AnimatedHireSection from "components/Home/AnimatedHireSection/AnimatedHireSection";
 import GetInTouch from "components/Home/GetInTouch";
 import Hero from "components/Home/Hero";
 import Projects from "components/Home/Projects";
@@ -11,6 +12,7 @@ const HomePage = () => {
     <div>
       <Hero />
       <About />
+      <AnimatedHireSection />
       <TechStack />
       <Worked />
       <Projects />

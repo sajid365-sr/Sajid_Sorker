@@ -9,40 +9,72 @@ import Image from "next/image";
 
 const Left = () => {
   return (
-    <div className="relative col-span-2 z-10 md:text-center lg:text-left !mt-[-20px]">
-      <Image
-        alt=""
-        src="/images/glassify/blur-cyan-0.png"
-        width="530"
-        height="530"
-        decoding="async"
-        data-nimg="1"
-        className="absolute bottom-full right-full -mr-72 -mb-56 opacity-50"
-      />
+    <div className="relative z-10 col-span-2 md:text-center lg:text-left space-y-6">
+      {/* Subtle Floating Background Glow */}
+      <div className="absolute -z-10 w-[400px] h-[400px] rounded-full bg-sky-500/20 blur-3xl top-0 left-0"></div>
 
-      <div className="relative">
-        <AnimatedTextWord text="Hi, my name is" className="text-lg" />
+      {/* Greeting with Typing Animation */}
+      <motion.div variants={fadeUpSpring} initial="hidden" animate="visible">
+        <p className="text-sky-400 text-lg font-semibold">
+          👋 Hey there, I&apos;m
+        </p>
+      </motion.div>
 
-        <div>
-          <AnimatedTextCharacter
-            className="!font-medium !bg-clip-text !text-5xl !leading-normal md:!text-7xl md:!leading-[87px] !text-slate-300"
-            text="Sajid Sorker."
-          />
-          <AnimatedTextCharacter
-            className="font-medium text-3xl sm:text-4xl tracking-normal md:text-5xl text-slate-400 mt-1"
-            text="I build things for the web."
-          />
-        </div>
-
-        <div className="my-5 md:my-8 leading-7 text-slate-400 md:text-lg max-w-3xl">
-          <AnimatedTextWord text="Highly motivated and very passionate Full Stack Developer with two years of experience in JavaScript, React js, Next js, Firebase, Tailwind CSS, Node js, Express js, MongoDB" />
-        </div>
+      {/* Name & Role with Gradient Text */}
+      <div>
+        <AnimatedTextCharacter
+          text="Sajid Sorker"
+          className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-sky-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent"
+        />
+        <AnimatedTextCharacter
+          text="Full Stack MERN Developer"
+          className="text-2xl md:text-4xl mt-2 text-slate-400"
+        />
       </div>
 
+      {/* Tagline */}
+      <motion.p
+        variants={fadeUpSpring}
+        initial="hidden"
+        animate="visible"
+        className="max-w-2xl text-slate-400 md:text-lg leading-relaxed"
+      >
+        I craft fast, scalable, and visually stunning web experiences using{" "}
+        <span className="text-sky-400 font-medium">React</span>,{" "}
+        <span className="text-sky-400 font-medium">Next.js</span>,{" "}
+        <span className="text-sky-400 font-medium">Node.js</span>, and{" "}
+        <span className="text-sky-400 font-medium">MongoDB</span>.
+      </motion.p>
+
+      {/* Dynamic Highlight Badges */}
+      <motion.div
+        variants={fadeUpSpring}
+        initial="hidden"
+        animate="visible"
+        className="flex flex-wrap gap-2 mt-4 justify-start md:justify-center lg:justify-start"
+      >
+        {["React", "Next.js", "Tailwind CSS", "Node.js", "MongoDB"].map(
+          (tech) => (
+            <span
+              key={tech}
+              className="px-3 py-1 text-sm rounded-full bg-sky-400/10 border border-sky-400/20 text-sky-300"
+            >
+              {tech}
+            </span>
+          )
+        )}
+      </motion.div>
+
+      {/* CTA Buttons */}
       <motion.div variants={fadeUpSpring} initial="hidden" animate="visible">
-        <a href="#projects">
-          <Button outlined> Check out my projects </Button>
-        </a>
+        <div className="flex gap-4 mt-6 justify-start md:justify-center lg:justify-start">
+          <a href="#projects">
+            <Button outlined>💼 View My Projects</Button>
+          </a>
+          <a href="#contact">
+            <Button>🤝 Let’s Connect</Button>
+          </a>
+        </div>
       </motion.div>
     </div>
   );
