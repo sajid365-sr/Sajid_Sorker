@@ -29,7 +29,7 @@ const About = () => {
   }, [typedText, isTyping]);
 
   return (
-    <section className="min-h-screen bg-slate-950 py-20 px-6">
+    <section className="min-h-screen section bg-slate-950 py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div

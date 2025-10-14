@@ -22,7 +22,10 @@ const Projects = () => {
   const filters = ["all", "Next.js", "React", "TypeScript", "AI", "MongoDB"];
 
   return (
-    <section className="min-h-screen bg-slate-950 py-20 px-6" id="projects">
+    <section
+      className="min-h-screen section bg-slate-950 py-20 px-6"
+      id="projects"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
