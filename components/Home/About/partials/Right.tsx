@@ -14,7 +14,6 @@ const Right = () => {
           className="rounded-xl z-40 transition-all duration-200 group-hover:translate-y-[2px] group-hover:translate-x-[2px]"
           layout="fill"
           objectFit="cover"
-          quality={100}
           alt="loading..."
         />
 

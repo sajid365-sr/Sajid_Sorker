@@ -53,7 +53,6 @@ const ProjectCard = ({
               className="transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
               layout="fill"
               objectFit="cover"
-              quality={100}
               alt="loading..."
             />
 
