@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const Left = () => {
   return (
-    <div className="relative z-10 col-span-2 md:text-center lg:text-left space-y-6">
+    <div className="relative z-20 col-span-2 md:text-center lg:text-left space-y-6">
       {/* Subtle Floating Background Glow */}
       <div className="absolute -z-10 w-[400px] h-[400px] rounded-full bg-sky-500/20 blur-3xl top-0 left-0"></div>
 

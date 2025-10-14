@@ -11,7 +11,7 @@ const Glassify = () => {
         height="530"
         decoding="async"
         data-nimg="1"
-        className="fixed right-full bottom-0 z-0 -mr-72 -mb-56 opacity-50"
+        className="fixed right-full bottom-0 z-10 -mr-72 -mb-56 opacity-50"
       />
     </>
   );
