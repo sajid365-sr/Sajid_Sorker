@@ -12,7 +12,7 @@ import Button from "@components/Button";
 
 const Projects = () => {
   return (
-    <section id="projects">
+    <section className="section" id="projects">
       <motion.h1
         variants={fadeLeft}
         {...motionStep}

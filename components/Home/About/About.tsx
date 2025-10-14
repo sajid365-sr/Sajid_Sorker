@@ -9,7 +9,7 @@ import { fadeLeft, motionStep } from "shared/config/motion";
 
 const About = () => {
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-20 section">
       <motion.h1
         variants={fadeLeft}
         {...motionStep}

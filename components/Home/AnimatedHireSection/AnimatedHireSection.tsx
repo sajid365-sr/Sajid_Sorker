@@ -21,7 +21,7 @@ const AnimatedHireSection = () => {
     const drops: number[] = Array(Math.floor(columns)).fill(1);
 
     const draw = () => {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillStyle = "rgba(15, 23, 42, 1)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.fillStyle = "#0ff";
@@ -45,7 +45,10 @@ const AnimatedHireSection = () => {
 
   return (
     <section className="relative w-full h-[80vh] flex items-center justify-center overflow-hidden bg-transparent">
-      <canvas ref={canvasRef} className="absolute inset-0 z-0 bg-transparent" />
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 z-0 bg-transparent mx-auto"
+      />
       <motion.h1
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
