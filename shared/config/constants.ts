@@ -2,25 +2,6 @@ import classNames from "classnames";
 
 import { FiGithub, FiLinkedin, FiTwitter, FiFacebook } from "react-icons/fi";
 import { ProjectTypes, SocialTypes, WorkedTypes } from "./types";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiTypescript,
-  SiJavascript,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiPrisma,
-  SiGit,
-  SiGithub,
-  SiPostman,
-  SiVercel,
-  SiFramer,
-  SiFirebase,
-  SiFigma,
-  SiVisualstudiocode,
-} from "react-icons/si";
 
 // whenever we need to change default className value we will use this
 export const cx = classNames;
@@ -28,34 +9,70 @@ export const cx = classNames;
 // nav data
 export const navData = ["About", "Experience", "Projects", "Contact"];
 
-// skill list
-export const techStack = {
+// techStack
+const techStack = {
   Frontend: [
-    { name: "React", icon: SiReact, color: "text-sky-500" },
-    { name: "Next.js", icon: SiNextdotjs, color: "text-gray-700" },
-    { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-sky-400" },
-    { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
-    { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+    { name: "React", color: "text-sky-500" },
+    { name: "Next.js", color: "text-gray-400" },
+    { name: "Tailwind CSS", color: "text-sky-400" },
+    { name: "TypeScript", color: "text-blue-500" },
+    { name: "JavaScript", color: "text-yellow-400" },
   ],
   Backend: [
-    { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
-    { name: "Express.js", icon: SiExpress, color: "text-gray-700" },
-    { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
-    { name: "Prisma", icon: SiPrisma, color: "text-indigo-600" },
+    { name: "Node.js", color: "text-green-500" },
+    { name: "Express.js", color: "text-gray-400" },
+    { name: "MongoDB", color: "text-green-600" },
+    { name: "Prisma", color: "text-indigo-600" },
   ],
   Tools: [
-    { name: "Git", icon: SiGit, color: "text-orange-500" },
-    { name: "GitHub", icon: SiGithub, color: "text-gray-700" },
-    { name: "Postman", icon: SiPostman, color: "text-orange-400" },
-    { name: "VS Code", icon: SiVisualstudiocode, color: "text-blue-500" },
-    { name: "Vercel", icon: SiVercel, color: "text-gray-700" },
+    { name: "Git", color: "text-orange-500" },
+    { name: "GitHub", color: "text-gray-400" },
+    { name: "Postman", color: "text-orange-400" },
+    { name: "VS Code", color: "text-blue-500" },
+    { name: "Vercel", color: "text-gray-400" },
   ],
   Others: [
-    { name: "Framer Motion", icon: SiFramer, color: "text-pink-500" },
-    { name: "Firebase", icon: SiFirebase, color: "text-amber-500" },
-    { name: "Figma", icon: SiFigma, color: "text-fuchsia-500" },
+    { name: "Framer Motion", color: "text-pink-500" },
+    { name: "Firebase", color: "text-amber-500" },
+    { name: "Figma", color: "text-fuchsia-500" },
   ],
 };
+
+// skills
+export const skills = [
+  {
+    category: "Frontend",
+    icon: "⚛️",
+    techs: techStack.Frontend,
+    color: "cyan",
+  },
+  {
+    category: "Backend",
+    icon: "🚀",
+    techs: techStack.Backend,
+    color: "emerald",
+  },
+  {
+    category: "Tools",
+    icon: "🛠️",
+    techs: techStack.Tools,
+    color: "purple",
+  },
+  {
+    category: "Others",
+    icon: "✨",
+    techs: techStack.Others,
+    color: "pink",
+  },
+];
+
+// stats
+export const stats = [
+  { label: "Projects Built", value: "10+", icon: "📦" },
+  { label: "Tech Stack", value: "MERN", icon: "💻" },
+  { label: "Lines of Code", value: "50K+", icon: "⚡" },
+  { label: "Coffee Consumed", value: "∞", icon: "☕" },
+];
 
 // worked data
 export const worked_data: WorkedTypes[] = [
@@ -72,6 +89,7 @@ export const worked_data: WorkedTypes[] = [
     title: "Accounts Manager",
     company: "Mutual Trust Bank PLC",
     url: "https://mutualtrustbank.com",
+    category: "banking",
   },
   {
     id: 1,
@@ -88,6 +106,7 @@ export const worked_data: WorkedTypes[] = [
     title: "Office In Charge",
     company: "Mutual Trust Bank PLC",
     url: "https://mutualtrustbank.com",
+    category: "banking",
   },
   {
     id: 2,
@@ -103,6 +122,7 @@ export const worked_data: WorkedTypes[] = [
     title: "Co-Founder & CEO",
     company: "Trendirect",
     url: "https://trendirect.com",
+    category: "business",
   },
 ];
 

@@ -1,56 +1,185 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-//
-import Featured from "components/common/cards/Project/Featured";
-import ProjectCard from "components/common/cards/Project/ProjectCard";
-import { fadeTop, fadeLeft, motionStep } from "shared/config/motion";
-import { projects } from "shared/config/constants";
-import { ProjectTypes } from "shared/config/types";
-import Button from "@components/Button";
+import FeaturedProject from "@components/cards/Project/Featured";
+import ProjectCard from "@components/cards/Project/ProjectCard";
+import { projects } from "@config/constants";
 
 const Projects = () => {
+  const [filter, setFilter] = useState("all");
+
+  const featuredProjects = projects.filter((p) => p.featured);
+  const otherProjects = projects.filter((p) => !p.featured);
+
+  const filteredProjects =
+    filter === "all"
+      ? otherProjects
+      : otherProjects.filter((p) =>
+          p.tech.some((t) => t.toLowerCase().includes(filter.toLowerCase()))
+        );
+
+  const filters = ["all", "Next.js", "React", "TypeScript", "AI", "MongoDB"];
+
   return (
-    <section className="section" id="projects">
-      <motion.h1
-        variants={fadeLeft}
-        {...motionStep}
-        className="flex items-center gap-2 text-3xl font-semibold text-slate-200 mb-10"
-      >
-        <span className="text-sky-400 font-mono">04.</span>
-        Some Things I’ve Built
-        <span className="h-[1px] w-32 bg-slate-700 ml-3 hidden md:inline-block"></span>
-      </motion.h1>
+    <section className="min-h-screen bg-slate-950 py-20 px-6" id="projects">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h1 className="flex items-center gap-3 text-4xl font-semibold text-slate-200 mb-4">
+            <span className="text-cyan-400 font-mono text-3xl">04.</span>
+            <span className="font-mono">
+              <span className="text-purple-400">&lt;</span>
+              Projects
+              <span className="text-purple-400"> /&gt;</span>
+            </span>
+            <span className="h-[1px] flex-1 bg-gradient-to-r from-slate-700 to-transparent ml-4"></span>
+          </h1>
+          <p className="text-slate-400 ml-14 font-mono text-sm">
+            <span className="text-slate-600">{"//"} </span>
+            Some things I&apos;ve built with passion & dedication
+          </p>
+        </motion.div>
 
-      <div className="lg:mb-72 mb-32">
-        {projects
-          .filter((e: ProjectTypes) => e.featured == true)
-          .map((e: ProjectTypes, i: number) => (
-            <motion.div
-              key={i}
-              variants={fadeTop}
-              {...motionStep}
-              className="lg:my-32 my-24"
+        <div className="ml-14 mb-32">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 flex items-center gap-3"
+          >
+            <span className="text-emerald-400 text-2xl">★</span>
+            <h2 className="text-2xl font-mono text-emerald-400">
+              Featured Projects
+            </h2>
+            <div className="h-px flex-1 bg-gradient-to-r from-emerald-500/50 to-transparent ml-4"></div>
+          </motion.div>
+          {/* Featured Projects */}
+          <div className="space-y-32">
+            {featuredProjects.map((project, i) => (
+              <FeaturedProject
+                key={i}
+                project={project}
+                index={i}
+                reverse={i % 2 !== 0}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="ml-14">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-cyan-400 text-2xl">◆</span>
+              <h2 className="text-2xl font-mono text-cyan-400">
+                Other Noteworthy Projects
+              </h2>
+              <div className="h-px flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent ml-4"></div>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {filters.map((f) => (
+                <motion.button
+                  key={f}
+                  onClick={() => setFilter(f)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`px-5 py-2.5 rounded-lg font-mono text-sm transition-all duration-300 ${
+                    filter === f
+                      ? "bg-cyan-500/20 text-cyan-400 border-2 border-cyan-500/40 shadow-lg shadow-cyan-500/10"
+                      : "bg-slate-800/50 text-slate-400 border-2 border-slate-700 hover:border-slate-600 hover:text-slate-300"
+                  }`}
+                >
+                  {f === "all" ? "view.all()" : f}
+                </motion.button>
+              ))}
+            </div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-slate-500 font-mono text-sm mt-4"
             >
-              <Featured {...e} secondary={i % 2 === 0 ? false : true} />
+              <span className="text-slate-600">{"//"} </span>
+              Showing {filteredProjects.length} project
+              {filteredProjects.length !== 1 ? "s" : ""}
+            </motion.p>
+          </motion.div>
+
+          {filteredProjects.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredProjects.map((project, i) => (
+                <ProjectCard key={i} project={project} index={i} />
+              ))}
+            </div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center py-20"
+            >
+              <p className="text-slate-400 font-mono">
+                No projects found with this filter. Try another one!
+              </p>
             </motion.div>
-          ))}
-      </div>
+          )}
+        </div>
 
-      <div className="grid grid-cols-12 gap-6 gap-y-8 my-20">
-        {projects
-          .filter((e: ProjectTypes) => e.featured !== true)
-          .map((e: ProjectTypes, i: number) => (
-            <ProjectCard {...e} key={i} />
-          ))}
-      </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="flex justify-center mt-20"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group relative px-8 py-4 bg-transparent border-2 border-cyan-400 text-cyan-400 rounded-lg font-mono text-sm overflow-hidden transition-all duration-300 hover:text-slate-900"
+          >
+            <span className="relative z-10 flex items-center gap-2">
+              <span>View All Projects</span>
+              <svg
+                className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </span>
+            <div className="absolute inset-0 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+          </motion.button>
+        </motion.div>
 
-      <div className="flex items-center justify-center">
-        <Button sizeClass="px-5 py-2" outlined>
-          {" "}
-          See More{" "}
-        </Button>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <p className="text-slate-500 font-mono text-sm">
+            <span className="text-slate-600">{"//"}</span>
+            <span className="text-cyan-400">{projects.length}</span> projects
+            built •{" "}
+            <span className="text-emerald-400">{featuredProjects.length}</span>{" "}
+            featured • <span className="text-purple-400">∞</span> more ideas in
+            progress
+          </p>
+        </motion.div>
       </div>
     </section>
   );

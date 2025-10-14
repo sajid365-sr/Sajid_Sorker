@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const AnimatedHireSection = () => {
+const HireMe = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -89,7 +89,7 @@ const AnimatedHireSection = () => {
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 0.3,
         vy: (Math.random() - 0.5) * 0.3,
-        opacity: Math.random() * 0.4 + 0.1,
+        opacity: Math.random() * 0.5 + 0.3,
         size: Math.random() * 8 + 10,
         color: `rgba(${100 + Math.random() * 155}, ${
           150 + Math.random() * 105
@@ -100,7 +100,7 @@ const AnimatedHireSection = () => {
     let animationId: number;
 
     const animate = () => {
-      ctx.fillStyle = "rgba(15, 23, 42, 1)";
+      ctx.fillStyle = "rgba(2, 6, 23, 1)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((p) => {
@@ -137,12 +137,8 @@ const AnimatedHireSection = () => {
   }, [mounted]);
 
   return (
-    <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent">
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 z-0"
-        style={{ opacity: 0.7 }}
-      />
+    <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent my-20">
+      <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-70" />
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center px-4">
@@ -152,15 +148,6 @@ const AnimatedHireSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center"
         >
-          {/* <motion.h1
-            className="text-7xl md:text-9xl font-light text-white tracking-tight mb-4"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            Hire Me
-          </motion.h1> */}
-
           <motion.h1
             className="text-6xl md:text-8xl font-mono font-bold tracking-wide mb-6"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -187,4 +174,4 @@ const AnimatedHireSection = () => {
   );
 };
 
-export default AnimatedHireSection;
+export default HireMe;

@@ -23,7 +23,7 @@ export default function RootLayout({
         <Meta />
       </head>
 
-      <body className="text-base bg-white dark:bg-slate-900 dark:text-slate-200">
+      <body className="text-base bg-white dark:bg-slate-950 dark:text-slate-200">
         <Socials />
         <Mail />
         <Glassify />

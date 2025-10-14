@@ -46,4 +46,5 @@ export type WorkedTypes = {
   company: string;
   url: string;
   id: number;
+  category: string;
 };

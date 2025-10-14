@@ -1,9 +1,8 @@
 import About from "components/Home/About";
-import AnimatedHireSection from "components/Home/AnimatedHireSection/AnimatedHireSection";
+import HireMe from "components/Home/HireMe";
 import GetInTouch from "components/Home/GetInTouch";
 import Hero from "components/Home/Hero";
 import Projects from "components/Home/Projects";
-import TechStack from "components/Home/TechStack";
 import Worked from "components/Home/Worked";
 import React from "react";
 
@@ -12,8 +11,7 @@ const HomePage = () => {
     <div>
       <Hero />
       <About />
-      <AnimatedHireSection />
-      <TechStack />
+      <HireMe />
       <Worked />
       <Projects />
       <GetInTouch />
