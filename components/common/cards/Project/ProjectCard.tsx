@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Image from "next/legacy/image";
 //
 
-import { ProjectTypes } from "shared/config/types";
+import { ProjectTypes } from "@config/types/types";
 
 const ProjectCard = ({
   project,

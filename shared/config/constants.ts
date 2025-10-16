@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 import { FiGithub, FiLinkedin, FiTwitter, FiFacebook } from "react-icons/fi";
-import { ProjectTypes, SocialTypes, WorkedTypes } from "./types";
+import { ProjectTypes, SocialTypes, WorkedTypes } from "./types/types";
 
 // whenever we need to change default className value we will use this
 export const cx = classNames;
@@ -254,8 +254,16 @@ export const projects: ProjectTypes[] = [
 
 // social media data
 export const socialData: SocialTypes[] = [
-  { icon: FiGithub, url: "https://github.com/sajid365-sr" },
-  { icon: FiLinkedin, url: "https://www.linkedin.com/in/sajid365-sr/" },
-  { icon: FiTwitter, url: "https://twitter.com/sajid365_sr" },
-  { icon: FiFacebook, url: "https://web.facebook.com/sajidsorker/" },
+  { name: "GitHub", icon: FiGithub, url: "https://github.com/sajid365-sr" },
+  {
+    name: "LinkedIn",
+    icon: FiLinkedin,
+    url: "https://www.linkedin.com/in/sajid365-sr/",
+  },
+  { name: "Twitter", icon: FiTwitter, url: "https://twitter.com/sajid365_sr" },
+  {
+    name: "Facebook",
+    icon: FiFacebook,
+    url: "https://web.facebook.com/sajidsorker/",
+  },
 ];

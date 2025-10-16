@@ -3,7 +3,7 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
 import React from "react";
-import { ProjectTypes } from "shared/config/types";
+import { ProjectTypes } from "@config/types/types";
 import { motion } from "framer-motion";
 
 interface FeaturedProps extends ProjectTypes {

@@ -1,4 +1,26 @@
-
+export const slideIn = (
+  direction: any,
+  type: any,
+  delay: any,
+  duration: any
+) => {
+  return {
+    hidden: {
+      x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
+      y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
+    },
+    show: {
+      x: 0,
+      y: 0,
+      transition: {
+        type: type,
+        delay: delay,
+        duration: duration,
+        ease: "easeOut",
+      },
+    },
+  };
+};
 
 // fade up spring
 export const fadeUpSpring = {
@@ -46,7 +68,6 @@ export const fadeLeft = {
   },
 };
 
-
 // fade bottom
 export const fadeBottom = {
   visible: {
@@ -69,7 +90,6 @@ export const fadeBottom = {
     },
   },
 };
-
 
 // fade right
 export const fadeRight = {
@@ -94,7 +114,6 @@ export const fadeRight = {
   },
 };
 
-
 // fade top
 export const fadeTop = {
   visible: {
@@ -117,7 +136,6 @@ export const fadeTop = {
     },
   },
 };
-
 
 // worked li
 export const worked_1 = {
@@ -142,7 +160,6 @@ export const worked_1 = {
   },
 };
 
-
 export const worked_2 = {
   visible: {
     opacity: 1,
@@ -164,7 +181,6 @@ export const worked_2 = {
     },
   },
 };
-
 
 export const worked_3 = {
   visible: {
@@ -188,10 +204,9 @@ export const worked_3 = {
   },
 };
 
-
 // initial step
 export const motionStep = {
-  initial : "hidden",
-  whileInView : "visible",
-  viewport : { once: true }
-}
+  initial: "hidden",
+  whileInView: "visible",
+  viewport: { once: true },
+};
