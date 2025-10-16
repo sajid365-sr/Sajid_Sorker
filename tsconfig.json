@@ -12,7 +12,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
+    "types": ["react", "react-dom"],
     "incremental": true,
     "baseUrl": "./",
     "paths": {
@@ -33,7 +34,7 @@
     ]
   },
   "include": [
-    "next-env.d.ts",
+    "shared/config/types/next-env.d.ts",
     "maath.d.ts",
     "**/*.ts",
     "**/*.tsx",

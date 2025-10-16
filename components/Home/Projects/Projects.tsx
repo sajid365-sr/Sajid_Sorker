@@ -34,7 +34,7 @@ const Projects = () => {
           className="mb-16"
         >
           <h1 className="flex items-center gap-3 text-4xl font-semibold text-slate-200 mb-4">
-            <span className="text-cyan-400 font-mono text-3xl">04.</span>
+            <span className="text-cyan-400 font-mono text-3xl">03.</span>
             <span className="font-mono">
               <span className="text-purple-400">&lt;</span>
               Projects

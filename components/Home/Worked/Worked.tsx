@@ -10,7 +10,10 @@ const Worked = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="min-h-screen section bg-slate-950 py-20 px-6">
+    <section
+      id="experience"
+      className="min-h-screen section bg-slate-950 py-20 px-6"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -19,7 +22,7 @@ const Worked = () => {
           className="mb-16"
         >
           <h1 className="flex items-center gap-3 text-4xl font-semibold text-slate-200 mb-4">
-            <span className="text-cyan-400 font-mono text-3xl">03.</span>
+            <span className="text-cyan-400 font-mono text-3xl">02.</span>
             <span className="font-mono">
               <span className="text-purple-400">&lt;</span>
               Work Experience

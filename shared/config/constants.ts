@@ -7,7 +7,13 @@ import { ProjectTypes, SocialTypes, WorkedTypes } from "./types/types";
 export const cx = classNames;
 
 // nav data
-export const navData = ["About", "Experience", "Projects", "Contact"];
+// Nav data
+export const navData = [
+  { id: "about", label: "About", number: "01" },
+  { id: "experience", label: "Experience", number: "02" },
+  { id: "projects", label: "Projects", number: "03" },
+  { id: "contact", label: "Contact", number: "04" },
+];
 
 // techStack
 const techStack = {
@@ -233,15 +239,15 @@ export const projects: ProjectTypes[] = [
     thumbnail: "digishelve.png",
   },
 
-  {
-    title: "Next Store",
-    description:
-      "I have created an e-commerce store using Next js, React, Sanity io and live payment integration with Stripe",
-    tech: ["Next js", "React", "Sanity io", "Stripe"],
-    code: "https://github.com/sajid365-sr/Next_Store",
-    live: "https://next-store-blue.vercel.app/",
-    thumbnail: "next_store.png",
-  },
+  // {
+  //   title: "Next Store",
+  //   description:
+  //     "I have created an e-commerce store using Next js, React, Sanity io and live payment integration with Stripe",
+  //   tech: ["Next js", "React", "Sanity io", "Stripe"],
+  //   code: "https://github.com/sajid365-sr/Next_Store",
+  //   live: "https://next-store-blue.vercel.app/",
+  //   thumbnail: "next_store.png",
+  // },
   {
     title: "3D Portfolio",
     description: "Build a 3d-portfolio website using Three js ans React three.",

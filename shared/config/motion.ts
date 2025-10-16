@@ -1,29 +1,7 @@
-export const slideIn = (
-  direction: any,
-  type: any,
-  delay: any,
-  duration: any
-) => {
-  return {
-    hidden: {
-      x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
-      y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
-    },
-    show: {
-      x: 0,
-      y: 0,
-      transition: {
-        type: type,
-        delay: delay,
-        duration: duration,
-        ease: "easeOut",
-      },
-    },
-  };
-};
+import { Variants } from "framer-motion";
 
 // fade up spring
-export const fadeUpSpring = {
+export const fadeUpSpring: Variants = {
   visible: {
     opacity: 1,
     y: 0,
@@ -46,7 +24,7 @@ export const fadeUpSpring = {
 };
 
 // fade left
-export const fadeLeft = {
+export const fadeLeft: Variants = {
   visible: {
     opacity: 1,
     x: 0,
@@ -69,7 +47,7 @@ export const fadeLeft = {
 };
 
 // fade bottom
-export const fadeBottom = {
+export const fadeBottom: Variants = {
   visible: {
     opacity: 1,
     y: 0,
@@ -92,7 +70,7 @@ export const fadeBottom = {
 };
 
 // fade right
-export const fadeRight = {
+export const fadeRight: Variants = {
   visible: {
     opacity: 1,
     x: 0,
@@ -115,7 +93,7 @@ export const fadeRight = {
 };
 
 // fade top
-export const fadeTop = {
+export const fadeTop: Variants = {
   visible: {
     opacity: 1,
     y: 0,
@@ -138,7 +116,7 @@ export const fadeTop = {
 };
 
 // worked li
-export const worked_1 = {
+export const worked_1: Variants = {
   visible: {
     opacity: 1,
     y: 0,
@@ -160,7 +138,7 @@ export const worked_1 = {
   },
 };
 
-export const worked_2 = {
+export const worked_2: Variants = {
   visible: {
     opacity: 1,
     y: 0,
@@ -182,7 +160,7 @@ export const worked_2 = {
   },
 };
 
-export const worked_3 = {
+export const worked_3: Variants = {
   visible: {
     opacity: 1,
     y: 0,

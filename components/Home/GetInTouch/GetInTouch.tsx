@@ -26,7 +26,7 @@ const GetInTouch = () => {
             transition={{ type: "spring", duration: 0.6 }}
             className="inline-block mb-4"
           >
-            <span className="text-cyan-400 font-mono text-3xl">05.</span>
+            <span className="text-cyan-400 font-mono text-3xl">04.</span>
           </motion.div>
 
           <h2 className="text-slate-400 font-mono text-lg mb-4">
