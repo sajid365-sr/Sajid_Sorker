@@ -33,7 +33,7 @@ const ProjectCard = ({
             layout="fill"
             src={`/images/projects/${project.thumbnail}`}
             alt={project.title}
-            fill=""
+            
             className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-2"
           />
 

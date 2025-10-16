@@ -37,7 +37,6 @@ const FeaturedProject = ({
               layout="fill"
               src={`/images/projects/${project.thumbnail}`}
               alt={project.title}
-              fill=""
               className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1"
             />
 
