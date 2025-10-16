@@ -1,9 +1,15 @@
-"use client"
+"use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-const AnimatedTextCharacter = ({ text, className } : { text : string, className ?: string }) => {
+const AnimatedTextCharacter = ({
+  text,
+  className,
+}: {
+  text: string;
+  className?: string;
+}) => {
   const letters = Array.from(text);
 
   const container = {
@@ -14,7 +20,7 @@ const AnimatedTextCharacter = ({ text, className } : { text : string, className 
     }),
   };
 
-  const child = {
+  const child: Variants = {
     visible: {
       opacity: 1,
       x: 0,
@@ -39,7 +45,7 @@ const AnimatedTextCharacter = ({ text, className } : { text : string, className 
 
   return (
     <motion.div
-      style={{display: "flex", flexWrap: "wrap"}}
+      style={{ display: "flex", flexWrap: "wrap" }}
       variants={container}
       initial="hidden"
       animate="visible"

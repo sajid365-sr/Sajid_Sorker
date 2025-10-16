@@ -1,9 +1,15 @@
-"use client"
+"use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-const AnimatedTextWord = ({ text, className } : { text : string, className ?: string }) => {
+const AnimatedTextWord = ({
+  text,
+  className,
+}: {
+  text: string;
+  className?: string;
+}) => {
   const words = text.split(" ");
 
   const container = {
@@ -14,7 +20,7 @@ const AnimatedTextWord = ({ text, className } : { text : string, className ?: st
     }),
   };
 
-  const child = {
+  const child: Variants = {
     visible: {
       opacity: 1,
       x: 0,
