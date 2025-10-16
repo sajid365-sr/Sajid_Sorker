@@ -116,7 +116,7 @@ const Left = () => {
           <div className="relative">
             <label className="block text-sm font-mono text-slate-400 mb-2">
               <span className="text-purple-400">const</span> email ={" "}
-              <span className="text-emerald-400">"</span>
+              <span className="text-emerald-400">&quot;</span>
             </label>
             <input
               type="email"
@@ -140,7 +140,7 @@ const Left = () => {
           <div className="relative">
             <label className="block text-sm font-mono text-slate-400 mb-2">
               <span className="text-purple-400">const</span> subject ={" "}
-              <span className="text-emerald-400">"</span>
+              <span className="text-emerald-400">&quot;</span>
             </label>
             <input
               type="text"
@@ -164,7 +164,7 @@ const Left = () => {
           <div className="relative">
             <label className="block text-sm font-mono text-slate-400 mb-2">
               <span className="text-purple-400">const</span> message ={" "}
-              <span className="text-emerald-400">"</span>
+              <span className="text-emerald-400">&quot;</span>
             </label>
             <textarea
               value={formData.message}
@@ -280,7 +280,7 @@ const Left = () => {
               className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg"
             >
               <p className="text-emerald-400 font-mono text-sm text-center">
-                ✓ Message sent successfully! I'll get back to you soon.
+                ✓ Message sent successfully! I&apos;ll get back to you soon.
               </p>
             </motion.div>
           )}
