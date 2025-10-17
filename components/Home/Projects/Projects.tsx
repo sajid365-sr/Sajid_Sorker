@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import FeaturedProject from "@components/cards/Project/Featured";
 import ProjectCard from "@components/cards/Project/ProjectCard";
 import { projects } from "@config/constants";
+import SectionHeader from "@components/SectionHeader";
 
 const Projects = () => {
   const [filter, setFilter] = useState("all");
@@ -22,33 +23,16 @@ const Projects = () => {
   const filters = ["all", "Next.js", "React", "TypeScript", "AI", "MongoDB"];
 
   return (
-    <section
-      className="min-h-screen section bg-slate-950 py-20 px-6"
-      id="projects"
-    >
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h1 className="flex items-center gap-3 text-4xl font-semibold text-slate-200 mb-4">
-            <span className="text-cyan-400 font-mono text-3xl">03.</span>
-            <span className="font-mono">
-              <span className="text-purple-400">&lt;</span>
-              Projects
-              <span className="text-purple-400"> /&gt;</span>
-            </span>
-            <span className="h-[1px] flex-1 bg-gradient-to-r from-slate-700 to-transparent ml-4"></span>
-          </h1>
-          <p className="text-slate-400 ml-14 font-mono text-sm">
-            <span className="text-slate-600">{"//"} </span>
-            Some things I&apos;ve built with passion & dedication
-          </p>
-        </motion.div>
-
-        <div className="ml-14 mb-32">
+    <section className="min-h-screen section  bg-slate-950 " id="projects">
+      <div className=" mx-auto">
+        {/* Header */}
+        <SectionHeader
+          number="03."
+          name="Projects"
+          description="Some things I've built with passion & dedication"
+        />
+        {/* Featured Projects */}
+        <div className=" mb-32">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,7 +45,7 @@ const Projects = () => {
             </h2>
             <div className="h-px flex-1 bg-gradient-to-r from-emerald-500/50 to-transparent ml-4"></div>
           </motion.div>
-          {/* Featured Projects */}
+
           <div className="space-y-32">
             {featuredProjects.map((project, i) => (
               <FeaturedProject
@@ -74,7 +58,8 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="ml-14">
+        {/* Other Projects */}
+        <div className="">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -119,7 +104,7 @@ const Projects = () => {
           </motion.div>
 
           {filteredProjects.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6">
               {filteredProjects.map((project, i) => (
                 <ProjectCard key={i} project={project} index={i} />
               ))}

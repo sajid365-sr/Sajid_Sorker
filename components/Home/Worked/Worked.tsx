@@ -1,46 +1,30 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { worked_data } from "@config/constants";
 import InfoBanner from "./partials/InfoBanner";
 import Content from "./partials/Content";
+import SectionHeader from "@components/SectionHeader";
 
 const Worked = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section
-      id="experience"
-      className="min-h-screen section bg-slate-950 py-20 px-6"
-    >
-      <div className="max-w-6xl mx-auto">
+    <section id="experience" className="min-h-screen section bg-slate-950 ">
+      <div className=" mx-auto">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-16"
-        >
-          <h1 className="flex items-center gap-3 text-4xl font-semibold text-slate-200 mb-4">
-            <span className="text-cyan-400 font-mono text-3xl">02.</span>
-            <span className="font-mono">
-              <span className="text-purple-400">&lt;</span>
-              Work Experience
-              <span className="text-purple-400"> /&gt;</span>
-            </span>
-            <span className="h-[1px] flex-1 bg-gradient-to-r from-slate-700 to-transparent ml-4"></span>
-          </h1>
-          <p className="text-slate-400 ml-14 font-mono text-sm">
-            <span className="text-slate-600"> {"//"} </span>
-            Professional background with transferable skills
-          </p>
-        </motion.div>
+        <SectionHeader
+          number="02."
+          name="Work Experience"
+          description="Professional background with transferable skills"
+        />
 
         {/* Info Banner */}
         <InfoBanner />
 
         {/* Main Content */}
-        <div className="ml-14 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Company Tabs */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -95,7 +79,7 @@ const Worked = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="mt-16 ml-14 text-center"
+          className="mt-16  text-center"
         >
           <p className="text-slate-500 font-mono text-sm">
             <span className="text-slate-600">{"//"} </span>

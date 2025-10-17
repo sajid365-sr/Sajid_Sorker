@@ -6,10 +6,6 @@ import React from "react";
 import { ProjectTypes } from "@config/types";
 import { motion } from "framer-motion";
 
-interface FeaturedProps extends ProjectTypes {
-  secondary?: boolean;
-}
-
 const FeaturedProject = ({
   project,
   index,
@@ -74,7 +70,7 @@ const FeaturedProject = ({
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.2 + 0.3 }}
-          className="text-3xl font-bold text-slate-200 mb-6 hover:text-cyan-400 transition-colors cursor-pointer"
+          className="text-2xl md:text-3xl font-bold text-slate-200 mb-6 hover:text-cyan-400 transition-colors cursor-pointer"
         >
           <Link href={project.live} target="_blank" rel="noopener noreferrer">
             {project.title}

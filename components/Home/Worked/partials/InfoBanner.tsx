@@ -7,7 +7,7 @@ const InfoBanner = () => {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
-      className="mb-10 ml-14 p-5 bg-gradient-to-r from-blue-500/5 to-purple-500/5 border border-blue-500/20 rounded-lg backdrop-blur-sm"
+      className="mb-10 p-5 w-full lg:w-1/2 bg-gradient-to-r from-blue-500/5 to-purple-500/5 border border-blue-500/20 rounded-lg backdrop-blur-sm"
     >
       <div className="flex items-start gap-3">
         <span className="text-2xl">💼</span>

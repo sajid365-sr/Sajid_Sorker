@@ -17,13 +17,13 @@ const Socials = () => {
       id="__social"
       className="fixed z-[999] bottom-0 left-[40px] hidden xl:block"
     >
-      <ul className="space-y-6 after:h-[90px] after:w-[1px] after:bg-slate-400 after:block after:mx-auto after:mt-6">
+      <ul className="space-y-6 after:h-[90px] after:w-[1px] after:bg-slate-400 transition-all duration-300  hover:translate-y-[-10px] after:block after:mx-auto after:mt-6">
         {socialData.map((e: SocialTypes, i: number) => (
           <li key={i}>
             <Link
               href={e.url}
               target="_blank"
-              className="text-[22px] text-slate-400 hover:text-sky-400 cursor-pointer transition-all duration-300 hover:translate-y-[-10px]"
+              className="text-[22px] text-slate-400 hover:text-sky-400 cursor-pointer transition-all duration-300 "
             >
               {<e.icon />}
             </Link>

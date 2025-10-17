@@ -5,13 +5,12 @@ import Hero from "components/Home/Hero";
 import Projects from "components/Home/Projects";
 import Worked from "components/Home/Worked";
 import StarsCanvas from "components/canvas/Stars";
-import HeroSection from "components/Home/Hero/HeroSection";
+import Footer from "@widgets/Footer";
 
 const HomePage = () => {
   return (
-    <div>
-      {/* <Hero /> */}
-      <HeroSection />
+    <div className="relative ">
+      <Hero />
       <About />
       <HireMe />
       <Worked />
@@ -19,6 +18,7 @@ const HomePage = () => {
       <div className="relative z-0">
         <GetInTouch />
         <StarsCanvas />
+        <Footer />
       </div>
     </div>
   );

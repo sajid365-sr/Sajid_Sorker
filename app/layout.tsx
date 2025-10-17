@@ -6,7 +6,6 @@ import Socials from "@widgets/Socials";
 import Meta from "@components/Meta";
 import { Urbanist } from "next/font/google";
 import Glassify from "@components/Glassify";
-import Footer from "@widgets/Footer";
 import MouseGlow from "@components/MouseGlow";
 
 // font
@@ -23,15 +22,14 @@ export default function RootLayout({
         <Meta />
       </head>
 
-      <body className="text-base bg-white dark:bg-slate-950 dark:text-slate-200">
+      <body className="text-base container bg-slate-950 ">
         <Socials />
         <Mail />
         <Glassify />
-        <MouseGlow />
+        {/* <MouseGlow /> */}
 
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
