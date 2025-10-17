@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 import { fadeTop, motionStep } from "shared/config/motion";
 import { socialData } from "shared/config/constants";
-import { SocialTypes } from "@config/types/types";
+import { SocialTypes } from "@config/types";
 
 const Socials = () => {
   return (

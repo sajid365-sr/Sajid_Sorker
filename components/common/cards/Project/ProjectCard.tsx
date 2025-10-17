@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Image from "next/legacy/image";
 //
 
-import { ProjectTypes } from "@config/types/types";
+import { ProjectTypes } from "@config/types";
 
 const ProjectCard = ({
   project,
@@ -33,7 +33,6 @@ const ProjectCard = ({
             layout="fill"
             src={`/images/projects/${project.thumbnail}`}
             alt={project.title}
-            
             className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-2"
           />
 
