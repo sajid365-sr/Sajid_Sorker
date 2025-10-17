@@ -1,18 +1,34 @@
 import classNames from "classnames";
 
 import { FiGithub, FiLinkedin, FiTwitter, FiFacebook } from "react-icons/fi";
-import { ProjectTypes, SocialTypes, WorkedTypes } from "./types/types";
+import { ProjectTypes, SocialTypes, WorkedTypes } from "./types";
 
 // whenever we need to change default className value we will use this
 export const cx = classNames;
 
-// nav data
 // Nav data
 export const navData = [
   { id: "about", label: "About", number: "01" },
   { id: "experience", label: "Experience", number: "02" },
   { id: "projects", label: "Projects", number: "03" },
   { id: "contact", label: "Contact", number: "04" },
+];
+
+// Rotating code snippets for Hero section
+export const codeSnippets = [
+  "const developer = 'Sajid Sorker';",
+  "const skills = ['React', 'Next.js', 'Node.js'];",
+  "const passion = 'Building amazing web apps';",
+  "const available = true; // Hire me!",
+];
+
+export const heroTechStack = [
+  { name: "React", color: "from-cyan-400 to-blue-500" },
+  { name: "Next.js", color: "from-slate-300 to-slate-500" },
+  { name: "TypeScript", color: "from-blue-400 to-blue-600" },
+  { name: "Node.js", color: "from-green-400 to-green-600" },
+  { name: "MongoDB", color: "from-emerald-400 to-emerald-600" },
+  { name: "Tailwind", color: "from-cyan-300 to-cyan-500" },
 ];
 
 // techStack

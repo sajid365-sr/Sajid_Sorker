@@ -31,7 +31,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen section bg-slate-950 py-20 px-6"
+      className="min-h-screen section  bg-slate-950 py-20 px-6"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
@@ -57,7 +57,7 @@ const About = () => {
 
         <div className="ml-14 grid lg:grid-cols-12 gap-12 items-start">
           {/* Left Side - Content */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7  space-y-8">
             {/* Code Block Introduction */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -189,7 +189,7 @@ const About = () => {
           </div>
 
           {/* Right Side - Image & Stats */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5  space-y-8">
             {/* Profile Image */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}

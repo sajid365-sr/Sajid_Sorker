@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 import { navData } from "@config/constants";
 
@@ -21,43 +22,26 @@ const Header = () => {
     document.body.removeChild(link);
   };
 
-  // Smooth scroll to section
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 80; // Header height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-    setMobileMenuOpen(false);
-  };
-
-  // Detect active section on scroll
+  // Simple scroll detection for header background
   useEffect(() => {
     const handleScroll = () => {
-      // Header background on scroll
       setScrolled(window.scrollY > 50);
 
-      // Active section detection
-      const sections = navData.map((nav) => document.getElementById(nav.id));
-      const scrollPosition = window.scrollY + 150;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(navData[i].id);
-          break;
-        }
+      // Simple active section detection using hash
+      const hash = window.location.hash.replace("#", "");
+      if (hash && navData.some((nav) => nav.id === hash)) {
+        setActiveSection(hash);
       }
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("hashchange", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleScroll);
+    };
   }, []);
 
   // Animated name letters
@@ -92,102 +76,107 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+          <Link
+            href="/"
             className="relative group cursor-pointer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            onClick={() => setActiveSection("")}
           >
-            <div className="flex items-center gap-2 text-2xl md:text-3xl font-bold font-mono">
-              {/* First Name */}
-              <span className="text-cyan-400">
-                {firstName.split("").map((letter, i) => (
-                  <AnimatedLetter key={i} letter={letter} delay={i * 0.05} />
-                ))}
-              </span>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <div className="flex items-center gap-2 text-2xl md:text-3xl font-bold font-mono">
+                {/* First Name */}
+                <span className="text-cyan-400">
+                  {firstName.split("").map((letter, i) => (
+                    <AnimatedLetter key={i} letter={letter} delay={i * 0.05} />
+                  ))}
+                </span>
 
-              {/* Separator */}
-              <motion.span
+                {/* Separator */}
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 0.3, duration: 0.3 }}
+                  className="inline-block w-8 h-[2px] bg-gradient-to-r from-cyan-400 to-purple-400 origin-left"
+                />
+
+                {/* Last Name */}
+                <span className="text-slate-200">
+                  {lastName.split("").map((letter, i) => (
+                    <AnimatedLetter
+                      key={i}
+                      letter={letter}
+                      delay={0.25 + i * 0.05}
+                    />
+                  ))}
+                </span>
+              </div>
+
+              {/* Hover Effect */}
+              <motion.div
+                className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-400 to-purple-400"
                 initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ delay: 0.3, duration: 0.3 }}
-                className="inline-block w-8 h-[2px] bg-gradient-to-r from-cyan-400 to-purple-400 origin-left"
+                whileHover={{ scaleX: 1 }}
+                transition={{ duration: 0.3 }}
               />
-
-              {/* Last Name */}
-              <span className="text-slate-200">
-                {lastName.split("").map((letter, i) => (
-                  <AnimatedLetter
-                    key={i}
-                    letter={letter}
-                    delay={0.25 + i * 0.05}
-                  />
-                ))}
-              </span>
-            </div>
-
-            {/* Hover Effect */}
-            <motion.div
-              className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-400 to-purple-400"
-              initial={{ scaleX: 0 }}
-              whileHover={{ scaleX: 1 }}
-              transition={{ duration: 0.3 }}
-            />
-          </motion.a>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navData.map((item, i) => (
-              <motion.button
+              <motion.div
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + i * 0.1 }}
-                className="relative group"
               >
-                <div className="flex items-center gap-2 font-mono text-sm">
-                  <span
-                    className={`transition-colors duration-300 ${
-                      activeSection === item.id
-                        ? "text-cyan-400"
-                        : "text-slate-500 group-hover:text-cyan-400"
-                    }`}
-                  >
-                    {item.number}.
-                  </span>
-                  <span
-                    className={`transition-colors duration-300 ${
-                      activeSection === item.id
-                        ? "text-cyan-400"
-                        : "text-slate-300 group-hover:text-cyan-400"
-                    }`}
-                  >
-                    {item.label}
-                  </span>
-                </div>
+                <Link
+                  href={`#${item.id}`}
+                  onClick={() => setActiveSection(item.id)}
+                  className="relative group block"
+                >
+                  <div className="flex items-center gap-2 font-mono text-sm">
+                    <span
+                      className={`transition-colors duration-300 ${
+                        activeSection === item.id
+                          ? "text-cyan-400"
+                          : "text-slate-500 group-hover:text-cyan-400"
+                      }`}
+                    >
+                      {item.number}.
+                    </span>
+                    <span
+                      className={`transition-colors duration-300 ${
+                        activeSection === item.id
+                          ? "text-cyan-400"
+                          : "text-slate-300 group-hover:text-cyan-400"
+                      }`}
+                    >
+                      {item.label}
+                    </span>
+                  </div>
 
-                {/* Active Indicator */}
-                {activeSection === item.id && (
+                  {/* Active Indicator */}
+                  {activeSection === item.id && (
+                    <motion.div
+                      layoutId="activeSection"
+                      className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-400 to-purple-400"
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
+                    />
+                  )}
+
+                  {/* Hover Indicator */}
                   <motion.div
-                    layoutId="activeSection"
-                    className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-400 to-purple-400"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-400/50 to-purple-400/50"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.2 }}
                   />
-                )}
-
-                {/* Hover Indicator */}
-                <motion.div
-                  className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-400/50 to-purple-400/50"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.2 }}
-                />
-              </motion.button>
+                </Link>
+              </motion.div>
             ))}
 
             {/* Resume Button */}
@@ -257,12 +246,11 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-
       <MobileMenu
         activeSection={activeSection}
+        setActiveSection={setActiveSection}
         handleResumeDownload={handleResumeDownload}
         isMobileMenuOpen={isMobileMenuOpen}
-        scrollToSection={scrollToSection}
         setMobileMenuOpen={setMobileMenuOpen}
       />
     </header>

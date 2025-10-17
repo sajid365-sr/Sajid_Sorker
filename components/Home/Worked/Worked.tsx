@@ -40,7 +40,7 @@ const Worked = () => {
         <InfoBanner />
 
         {/* Main Content */}
-        <div className="ml-14 flex gap-8">
+        <div className="ml-14 grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Company Tabs */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

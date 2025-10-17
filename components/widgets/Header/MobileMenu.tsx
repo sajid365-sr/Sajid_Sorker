@@ -1,19 +1,21 @@
 import { navData } from "@config/constants";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import React from "react";
 
 interface MobileMenuProps {
   isMobileMenuOpen: boolean;
   setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  scrollToSection: (section: string) => void;
   activeSection: string;
+  setActiveSection: React.Dispatch<React.SetStateAction<string>>;
   handleResumeDownload: () => void;
 }
+
 const MobileMenu = ({
   isMobileMenuOpen,
   setMobileMenuOpen,
-  scrollToSection,
   activeSection,
+  setActiveSection,
   handleResumeDownload,
 }: MobileMenuProps) => {
   return (
@@ -41,36 +43,43 @@ const MobileMenu = ({
             >
               <nav className="p-8 space-y-6">
                 {navData.map((item, i) => (
-                  <motion.button
+                  <motion.div
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="w-full text-left group"
                   >
-                    <div className="flex items-center gap-4 py-3">
-                      <span className="text-cyan-400 font-mono text-sm">
-                        {item.number}.
-                      </span>
-                      <span className="text-slate-300 text-lg group-hover:text-cyan-400 transition-colors">
-                        {item.label}
-                      </span>
-                      {activeSection === item.id && (
-                        <motion.div
-                          layoutId="activeMobileSection"
-                          className="ml-auto w-2 h-2 rounded-full bg-cyan-400"
-                        />
-                      )}
-                    </div>
-                    <motion.div
-                      className="h-[1px] bg-gradient-to-r from-cyan-400/50 to-transparent"
-                      initial={{ scaleX: 0 }}
-                      whileHover={{ scaleX: 1 }}
-                      transition={{ duration: 0.2 }}
-                      style={{ originX: 0 }}
-                    />
-                  </motion.button>
+                    <Link
+                      href={`#${item.id}`}
+                      onClick={() => {
+                        setActiveSection(item.id);
+                        setMobileMenuOpen(false);
+                      }}
+                      className="w-full text-left group block"
+                    >
+                      <div className="flex items-center gap-4 py-3">
+                        <span className="text-cyan-400 font-mono text-sm">
+                          {item.number}.
+                        </span>
+                        <span className="text-slate-300 text-lg group-hover:text-cyan-400 transition-colors">
+                          {item.label}
+                        </span>
+                        {activeSection === item.id && (
+                          <motion.div
+                            layoutId="activeMobileSection"
+                            className="ml-auto w-2 h-2 rounded-full bg-cyan-400"
+                          />
+                        )}
+                      </div>
+                      <motion.div
+                        className="h-[1px] bg-gradient-to-r from-cyan-400/50 to-transparent"
+                        initial={{ scaleX: 0 }}
+                        whileHover={{ scaleX: 1 }}
+                        transition={{ duration: 0.2 }}
+                        style={{ originX: 0 }}
+                      />
+                    </Link>
+                  </motion.div>
                 ))}
 
                 {/* Mobile Resume Button */}

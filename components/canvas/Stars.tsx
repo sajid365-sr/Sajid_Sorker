@@ -1,7 +1,4 @@
 "use client";
-
-/** @format */
-
 import React, { useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Preload, PointMaterial, Points } from "@react-three/drei";
@@ -10,7 +7,11 @@ import type { Points as ThreePoints } from "three";
 
 const Stars: React.FC = (props) => {
   const ref = useRef<ThreePoints>(null!);
-  const sphere = random.inSphere(new Float32Array(5000), { radius: 1.2 });
+
+  const sphere = random.inSphere(new Float32Array(2000 * 3), { radius: 1.2 });
+  if (sphere.some((v: number) => isNaN(v))) {
+    console.error("NaN values detected in sphere points!");
+  }
 
   useFrame((_, delta) => {
     if (ref.current) {

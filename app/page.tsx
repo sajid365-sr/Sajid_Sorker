@@ -4,13 +4,14 @@ import GetInTouch from "components/Home/GetInTouch";
 import Hero from "components/Home/Hero";
 import Projects from "components/Home/Projects";
 import Worked from "components/Home/Worked";
-import React from "react";
 import StarsCanvas from "components/canvas/Stars";
+import HeroSection from "components/Home/Hero/HeroSection";
 
 const HomePage = () => {
   return (
     <div>
-      <Hero />
+      {/* <Hero /> */}
+      <HeroSection />
       <About />
       <HireMe />
       <Worked />
