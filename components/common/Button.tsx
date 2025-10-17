@@ -5,7 +5,7 @@ import Link from "next/link";
 //
 import twFocusClass from "shared/utils/twFocusClass";
 import { cx } from "shared/config/constants";
-import { ButtonProps } from "@config/types/types";
+import { ButtonProps } from "@config/types";
 
 const Button: FC<ButtonProps> = ({
   className = "",
