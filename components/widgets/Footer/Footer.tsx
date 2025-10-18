@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <section id="__footer" className="py-5 section">
+    <section id="__footer" className="py-5 ">
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
-        className="text-slate-300 text-center max-w-2xl mx-auto text-base leading-relaxed"
+        className="text-slate-300 text-center max-w-2xl px-5 lg:px-0 mx-auto text-base leading-relaxed"
       >
         Actively seeking new opportunities! I&apos;m always open to exciting
         roles and collaborations. If you have an opportunity, a question, or

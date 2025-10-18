@@ -73,10 +73,10 @@ const Left = () => {
   };
 
   return (
-    <motion.div variants={fadeLeft} className="">
+    <motion.div variants={fadeLeft} className="flex-1">
       <div
         ref={formRef}
-        className="bg-slate-900/50 border border-slate-800 rounded-xl p-8 hover:border-cyan-400/30 transition-all duration-300"
+        className="bg-slate-900/50 border border-slate-800 rounded-xl p-3 md:p-8 hover:border-cyan-400/30 transition-all duration-300"
       >
         <h3 className="text-xl font-mono text-cyan-400 mb-6 flex items-center gap-2">
           <span className="text-cyan-400">►</span>

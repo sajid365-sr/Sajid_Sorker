@@ -137,7 +137,7 @@ const HireMe = () => {
   }, [mounted]);
 
   return (
-    <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent my-20">
+    <section className="relative w-full md:h-screen h-[50vh] flex flex-col items-center justify-center overflow-hidden bg-transparent my-20">
       <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-70" />
 
       {/* Main content */}
@@ -149,7 +149,7 @@ const HireMe = () => {
           className="text-center"
         >
           <motion.h1
-            className="text-6xl md:text-8xl font-mono font-bold tracking-wide mb-6"
+            className="text-5xl md:text-8xl font-mono font-bold tracking-wide mb-6"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}

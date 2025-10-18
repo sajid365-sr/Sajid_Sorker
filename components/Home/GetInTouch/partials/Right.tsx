@@ -5,7 +5,7 @@ import EarthCanvas from "components/canvas/Earth";
 
 const Right = () => {
   return (
-    <div className="">
+    <div className="flex-1">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ const Right = () => {
       </motion.div>
       <motion.div
         variants={fadeRight}
-        className="lg:flex-1  lg:h-[650px] md:h-[550px] h-[400px]"
+        className="lg:flex-1  lg:h-[750px] md:h-[550px] h-[450px]"
       >
         <EarthCanvas />
       </motion.div>
