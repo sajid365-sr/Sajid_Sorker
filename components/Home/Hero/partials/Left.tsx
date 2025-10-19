@@ -2,8 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { AiOutlineProject } from "react-icons/ai";
 import { IoMailOutline } from "react-icons/io5";
+import { useScrollToSection } from "hooks/useScrollToSection";
 
 const Left = () => {
+  const { scrollToSection } = useScrollToSection();
+
   const stats = [
     { label: "Projects Built", value: "10+" },
     { label: "Tech Stack", value: "MERN" },
@@ -82,27 +85,25 @@ const Left = () => {
         transition={{ duration: 0.6, delay: 0.7 }}
         className="flex  gap-4 pt-4"
       >
-        <a href="#projects">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-4 md:px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold flex items-center gap-2 shadow-lg shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-shadow"
-          >
-            <AiOutlineProject className="" size={25} />
-            View Projects
-          </motion.button>
-        </a>
+        <motion.button
+          onClick={() => scrollToSection("projects")}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="px-4 md:px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold flex items-center gap-2 shadow-lg shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-shadow"
+        >
+          <AiOutlineProject className="" size={25} />
+          View Projects
+        </motion.button>
 
-        <a href="#contact">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-4 md:px-8 py-4 bg-transparent border-2 border-cyan-400 text-cyan-400 rounded-lg font-semibold flex items-center gap-2 hover:bg-cyan-400/10 transition-colors"
-          >
-            <IoMailOutline size={25} />
-            Get In Touch
-          </motion.button>
-        </a>
+        <motion.button
+          onClick={() => scrollToSection("contact")}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="px-4 md:px-8 py-4 bg-transparent border-2 border-cyan-400 text-cyan-400 rounded-lg font-semibold flex items-center gap-2 hover:bg-cyan-400/10 transition-colors"
+        >
+          <IoMailOutline size={25} />
+          Get In Touch
+        </motion.button>
       </motion.div>
 
       {/* Stats Bar */}
