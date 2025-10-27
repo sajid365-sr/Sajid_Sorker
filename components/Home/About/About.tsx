@@ -16,7 +16,7 @@ const About = () => {
           description="Self-taught developer with a passion for creating"
         />
 
-        <div className="grid lg:grid-cols-3 gap-12 items-start">
+        <div className="grid lg:grid-cols-6 gap-12 items-start">
           {/* Left Side - Content */}
 
           <Left />

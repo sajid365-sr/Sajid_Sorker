@@ -26,7 +26,7 @@ export default function RootLayout({
         <Socials />
         <Mail />
         <Glassify />
-        {/* <MouseGlow /> */}
+        <MouseGlow />
 
         <Header />
         {children}

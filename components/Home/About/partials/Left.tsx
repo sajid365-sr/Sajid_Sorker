@@ -1,5 +1,6 @@
 "use client";
 import { skills } from "@config/constants";
+import { fadeLeft, fadeUpSpring, motionStep } from "@config/motion";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -27,15 +28,10 @@ const Left = () => {
     }
   }, [typedText, isTyping, codeSnippet]);
   return (
-    <div className="lg:col-span-2 col-span-3  space-y-8">
+    <div className="lg:col-span-4 col-span-full  space-y-8">
       {/* Code Block Introduction */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.2 }}
-        className="relative"
-      >
-        <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-6 font-mono text-sm backdrop-blur-sm">
+      <motion.div variants={fadeLeft} {...motionStep} className="relative">
+        <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-6   font-mono text-sm backdrop-blur-sm">
           {/* Terminal Header */}
           <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-800">
             <div className="flex gap-1.5">
@@ -47,7 +43,7 @@ const Left = () => {
           </div>
 
           {/* Typed Code */}
-          <pre className="text-slate-300 leading-relaxed">
+          <pre className="text-slate-300 leading-relaxed  whitespace-pre-wrap">
             <code>
               {typedText}
               {isTyping && (
@@ -64,9 +60,8 @@ const Left = () => {
 
       {/* About Text */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
+        variants={fadeUpSpring}
+        {...motionStep}
         className="space-y-5 text-slate-300 leading-relaxed"
       >
         <p>
@@ -136,18 +131,39 @@ const Left = () => {
                 </h4>
               </div>
               <div className="flex flex-wrap gap-2">
-                {skill.techs.map((tech, j) => (
-                  <span
-                    key={j}
-                    className={`px-2 py-1 text-xs font-mono rounded transition-all duration-300 ${
-                      activeSkill === i
-                        ? `${tech.color} bg-slate-800/50`
-                        : "bg-slate-800 text-slate-400"
-                    }`}
-                  >
-                    {tech.name}
-                  </span>
-                ))}
+                {skill.techs.map((tech, j) => {
+                  // Map color classes to actual color values
+                  const colorMap: { [key: string]: string } = {
+                    "text-sky-500": "#0ea5e9",
+                    "text-gray-400": "#9ca3af",
+                    "text-sky-400": "#38bdf8",
+                    "text-blue-500": "#3b82f6",
+                    "text-yellow-400": "#facc15",
+                    "text-green-500": "#22c55e",
+                    "text-green-600": "#16a34a",
+                    "text-indigo-600": "#4f46e5",
+                    "text-orange-500": "#f97316",
+                    "text-orange-400": "#fb923c",
+                    "text-pink-500": "#ec4899",
+                    "text-amber-500": "#f59e0b",
+                    "text-fuchsia-500": "#d946ef",
+                  };
+
+                  const textColor =
+                    activeSkill === i
+                      ? colorMap[tech.color] || "#94a3b8"
+                      : "#94a3b8";
+
+                  return (
+                    <span
+                      key={j}
+                      className="px-2 py-1 text-xs font-mono rounded transition-all duration-300 bg-slate-800/50"
+                      style={{ color: textColor }}
+                    >
+                      {tech.name}
+                    </span>
+                  );
+                })}
               </div>
             </motion.div>
           ))}

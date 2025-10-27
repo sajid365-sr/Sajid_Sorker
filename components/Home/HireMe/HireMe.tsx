@@ -1,4 +1,5 @@
 "use client";
+import AnimatedTextCharacter from "@components/motion/AnimatedTextCherecter";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -149,15 +150,18 @@ const HireMe = () => {
           className="text-center"
         >
           <motion.h1
-            className="text-5xl md:text-8xl font-mono font-bold tracking-wide mb-6"
+            className="text-5xl flex gap-8 items-center justify-center md:text-8xl font-mono font-bold tracking-wide mb-6"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
             <span className="text-cyan-400">&lt;</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 drop-shadow-[0_0_30px_rgba(34,211,238,0.5)]">
-              HireMe
-            </span>
+
+            <AnimatedTextCharacter
+              text="HireMe"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 drop-shadow-[0_0_30px_rgba(34,211,238,0.5)]"
+            />
+
             <span className="text-cyan-400"> /&gt;</span>
           </motion.h1>
           <motion.p

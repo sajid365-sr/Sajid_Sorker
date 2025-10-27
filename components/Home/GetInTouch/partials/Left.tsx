@@ -3,7 +3,7 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { fadeLeft } from "@config/motion";
+import { fadeLeft, motionStep } from "@config/motion";
 
 const Left = () => {
   const formRef = useRef<HTMLDivElement>(null);
@@ -73,7 +73,7 @@ const Left = () => {
   };
 
   return (
-    <motion.div variants={fadeLeft} className="flex-1">
+    <motion.div variants={fadeLeft} {...motionStep} className="flex-1">
       <div
         ref={formRef}
         className="bg-slate-900/50 border border-slate-800 rounded-xl p-3 md:p-8 hover:border-cyan-400/30 transition-all duration-300"

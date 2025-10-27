@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import React from "react";
 import { stats } from "@config/constants";
 import Image from "next/image";
+import { fadeTop, motionStep } from "@config/motion";
 
 const Right = () => {
   return (
-    <div className=" col-span-3 lg:col-span-1  space-y-8">
+    <div className=" col-span-full lg:col-span-2  space-y-8">
       {/* Profile Image */}
       <motion.div
         initial={{ opacity: 0, x: 20 }}
@@ -41,9 +42,8 @@ const Right = () => {
 
       {/* Stats Grid */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8 }}
+        variants={fadeTop}
+        {...motionStep}
         className="grid grid-cols-2 gap-4"
       >
         {stats.map((stat, i) => (
@@ -56,8 +56,18 @@ const Right = () => {
             className="p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-cyan-400/30 transition-all duration-300 cursor-default"
           >
             <div className="text-2xl mb-2">{stat.icon}</div>
-            <div className="text-2xl font-bold text-cyan-400 font-mono mb-1">
-              {stat.value}
+            <div className="">
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.3 + i * 0.05 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                className="text-2xl font-bold text-cyan-400 font-mono mb-1 transition-all duration-300 cursor-default"
+              >
+                {stat.value}
+              </motion.span>
             </div>
             <div className="text-xs text-slate-400 font-mono">{stat.label}</div>
           </motion.div>

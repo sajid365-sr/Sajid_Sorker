@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { fadeRight } from "@config/motion";
+import { fadeRight, motionStep } from "@config/motion";
 import EarthCanvas from "components/canvas/Earth";
 
 const Right = () => {
@@ -26,6 +26,7 @@ const Right = () => {
       </motion.div>
       <motion.div
         variants={fadeRight}
+        {...motionStep}
         className="lg:flex-1  lg:h-[750px] md:h-[550px] h-[450px]"
       >
         <EarthCanvas />

@@ -14,17 +14,21 @@ const Left = () => {
   ];
   return (
     <div className="space-y-8">
-      {/* Greeting Badge */}
+      {/* Status Badge */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
+        className="flex items-center gap-3 py-2 px-8 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-full max-w-max"
       >
-        <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-        <span className="text-cyan-400 text-sm font-mono">
+        <div className="relative">
+          <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
+          <div className="absolute inset-0 w-3 h-3 bg-cyan-400 rounded-full animate-ping"></div>
+        </div>
+
+        <p className="text-cyan-400 font-mono md:text-lg text-sm font-semibold">
           Available for hire
-        </span>
+        </p>
       </motion.div>
 
       {/* Main Heading */}

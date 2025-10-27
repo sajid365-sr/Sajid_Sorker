@@ -58,12 +58,12 @@ const Hero = () => {
               opacity: [0, 0.3, 0.3, 0],
             }}
             transition={{
-              duration: 15 + i * 2,
+              duration: 20 + i * 2,
               repeat: Infinity,
               delay: i * 0.5,
               ease: "linear",
             }}
-            className="absolute text-cyan-400/10 font-mono text-xs whitespace-nowrap"
+            className="absolute text-gray-200/50 font-mono text-xs whitespace-nowrap"
             style={{ top: `${i * 5}%` }}
           >
             {`<code>Building amazing web experiences... 🚀</code>`}
