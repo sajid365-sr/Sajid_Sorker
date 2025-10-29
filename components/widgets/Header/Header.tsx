@@ -85,23 +85,6 @@ const Header = () => {
     setMobileMenuOpen(false);
   };
 
-  const AnimatedLetter = ({
-    letter,
-    delay,
-  }: {
-    letter: string;
-    delay: number;
-  }) => (
-    <motion.span
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, type: "spring", stiffness: 200, damping: 10 }}
-      className="inline-block"
-    >
-      {letter}
-    </motion.span>
-  );
-
   const firstName = "Sajid";
   const lastName = "Sorker";
 
@@ -139,11 +122,20 @@ const Header = () => {
                 <div className="flex items-center gap-2 text-2xl md:text-3xl font-bold font-mono">
                   <span className="text-cyan-400">
                     {firstName.split("").map((letter, i) => (
-                      <AnimatedLetter
+                      <motion.span
                         key={i}
-                        letter={letter}
-                        delay={i * 0.05}
-                      />
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                          delay: i * 0.05,
+                          type: "spring",
+                          stiffness: 200,
+                          damping: 10,
+                        }}
+                        className="inline-block"
+                      >
+                        {letter}
+                      </motion.span>
                     ))}
                   </span>
 
@@ -155,11 +147,19 @@ const Header = () => {
                   />
                   <span className="text-slate-200">
                     {lastName.split("").map((letter, i) => (
-                      <AnimatedLetter
+                      <motion.span
                         key={i}
-                        letter={letter}
-                        delay={0.25 + i * 0.05}
-                      />
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                          delay: 0.25 + i * 0.05,
+                          type: "spring",
+                          stiffness: 200,
+                          damping: 10,
+                        }}
+                      >
+                        {letter}
+                      </motion.span>
                     ))}
                   </span>
                 </div>
