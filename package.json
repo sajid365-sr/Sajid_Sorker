@@ -20,7 +20,7 @@
     "eslint-config-next": "^13.1.0",
     "framer-motion": "^12.23.24",
     "maath": "^0.10.8",
-    "next": "^15.5.4",
+    "next": "^16.2.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icons": "^4.12.0",
