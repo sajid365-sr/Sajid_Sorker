@@ -17,7 +17,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "types": [
       "react",
       "react-dom",
@@ -67,7 +67,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/not-found.jsx",
-    "pages/404.jsx"
+    "pages/404.jsx",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

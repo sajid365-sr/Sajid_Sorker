@@ -1,0 +1,127 @@
+.hvac-page details summary::-webkit-details-marker {
+  display: none;
+}
+
+.hvac-page {
+  --hvac-ink: #142433;
+  --hvac-body: #4f4a44;
+  --hvac-muted: #6d665d;
+  --hvac-paper: #f3eee6;
+  --hvac-paper-2: #ebe4d8;
+  --hvac-line: #ddd4c8;
+  --hvac-copper: #c45c26;
+  --hvac-copper-dark: #a84b1c;
+  overflow-x: hidden;
+  color: var(--hvac-ink);
+  background: var(--hvac-paper);
+}
+
+.hvac-page * {
+  font-family: "Open Sans", "Urbanist", sans-serif;
+}
+
+.hvac-page h1,
+.hvac-page h2,
+.hvac-page h3,
+.hvac-page .font-primary {
+  font-family: Urbanist, Poppins, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.hvac-page h1 {
+  letter-spacing: -0.038em;
+}
+
+.hvac-page ::selection {
+  background: #1a2a3a;
+  color: #f7f4ef;
+}
+
+.hvac-page .hvac-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--hvac-copper);
+}
+
+.hvac-page .hvac-eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background: var(--hvac-copper);
+}
+
+.hvac-page .hvac-lede {
+  max-width: 36rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--hvac-body);
+}
+
+@media (min-width: 640px) {
+  .hvac-page .hvac-lede {
+    font-size: 1.125rem;
+  }
+}
+
+.hvac-page .hvac-section {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+@media (min-width: 1024px) {
+  .hvac-page .hvac-section {
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+  }
+}
+
+.hvac-page .hvac-cta-primary {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset;
+}
+
+.hvac-page .hvac-cta-primary:hover {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hvac-page .hvac-cta-primary,
+  .hvac-page .hvac-cta-primary:hover {
+    transform: none;
+    transition: none;
+  }
+
+  html:has(.hvac-page) {
+    scroll-behavior: auto;
+  }
+}
+
+.hvac-page .hvac-heading {
+  font-family: Urbanist, Poppins, sans-serif;
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 640px) {
+  .hvac-page .hvac-heading {
+    font-size: 2.35rem;
+  }
+}
+
+.hvac-page details summary {
+  list-style: none;
+}
+
+.hvac-page details + details {
+  border-top: 1px solid var(--hvac-line);
+}
+
+.hvac-page details[open] summary {
+  color: var(--hvac-ink);
+}

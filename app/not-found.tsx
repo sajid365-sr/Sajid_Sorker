@@ -8,6 +8,7 @@ import Button from "@components/Button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ProgressBar from "@widgets/ProgressBar";
+import PortfolioShell from "components/widgets/PortfolioShell";
 
 export default function NotFound() {
   const router = useRouter();
@@ -32,6 +33,7 @@ export default function NotFound() {
   if (!particles.length) return null; // wait until particles are generated
 
   return (
+    <PortfolioShell>
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background dark:bg-background-dark">
       {/* animated particles background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -99,5 +101,6 @@ export default function NotFound() {
         </motion.div>
       </div>
     </div>
+    </PortfolioShell>
   );
 }
