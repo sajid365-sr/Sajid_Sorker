@@ -133,4 +133,8 @@ export const faqs = [
     q: "Do you work with HVAC businesses outside the US?",
     a: "Yes. The same approach works for contractors in other countries: clear services, easy contact, and a site that works on a phone.",
   },
+  {
+        q: "How much does a website cost?",
+        a: "Most HVAC website projects start at $1,000. The final price depends on the number of pages and features your business needs.",
+    },
 ];
