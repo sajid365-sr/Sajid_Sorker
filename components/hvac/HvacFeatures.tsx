@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { features, visitorNeeds } from "./hvacContent";
+import { whatYouGet, visitorNeeds } from "./hvacContent";
 
 const HvacFeatures = () => {
   return (
@@ -19,19 +19,20 @@ const HvacFeatures = () => {
             className="mb-12 max-w-2xl sm:mb-16"
           >
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-cyan-400">
-              02 &middot; What I Build
+              02. &lt;What I Build /&gt;
             </span>
             <h2 className="mt-2 font-primary text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl">
               Everything Your HVAC Website Needs
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-slate-400 sm:text-lg">
-              Purpose-built features designed specifically for heating, cooling, and ventilation contractors &mdash; engineered to convert local traffic into calls and estimate requests.
+            <p className="mt-3 font-mono text-sm text-slate-500">
+              // Everything your HVAC website needs to turn visitors into inquiries.
             </p>
           </motion.div>
 
-          {/* ── Stronger Layout: Large Visual Asset Slot + Structured Feature List Beside It ── */}
+          {/* ── Two-column layout: Large Visual Asset left + "What You'll Get" list right ── */}
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:items-start">
-            {/* Visual Asset Slot (Sticky on Desktop) */}
+
+            {/* ── LEFT: Visual Asset Slot (Sticky on Desktop) ── */}
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +45,7 @@ const HvacFeatures = () => {
                 <div className="pointer-events-none absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-br from-cyan-500/15 via-blue-500/10 to-purple-500/15 blur-2xl" />
 
                 {/*
-                 * ASSET SLOT: HVAC WEBSITE PREVIEW — Large screenshot of a polished HVAC homepage showing hero, services, quote CTA and service area. Prefer 16:10 landscape.
+                 * ASSET SLOT: HVAC WEBSITE PREVIEW — Real screenshot of the final HVAC demo homepage showing the hero, services, CTA, and quote/request flow. Prefer 16:10 landscape.
                  */}
                 <div className="group relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-900 shadow-2xl shadow-black/60">
                   {/* Browser top chrome */}
@@ -70,7 +71,7 @@ const HvacFeatures = () => {
                     {/* Subtle grid pattern */}
                     <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] [background-size:36px_36px]" />
 
-                    {/* Camera/Screen Icon */}
+                    {/* Screen Icon */}
                     <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 text-cyan-400 shadow-inner">
                       <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <rect x="2" y="3" width="20" height="14" rx="2" strokeWidth={1.5} />
@@ -95,32 +96,57 @@ const HvacFeatures = () => {
               </p>
             </motion.div>
 
-            {/* Structured Feature List (Not generic SaaS cards) */}
+            {/* ── RIGHT: "What You'll Get" benefit list ── */}
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="divide-y divide-slate-800/80 rounded-2xl border border-slate-800 bg-slate-900/40 p-4 sm:p-6 backdrop-blur-sm"
+              className="flex flex-col"
             >
-              {features.map((item, index) => (
-                <div
-                  key={item.title}
-                  className="group flex items-start gap-4 py-4 first:pt-1 last:pb-1 transition-colors duration-200 hover:bg-slate-900/40 px-2 rounded-lg"
-                >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-cyan-500/10 font-mono text-xs font-bold text-cyan-400 border border-cyan-500/20 group-hover:border-cyan-400/50 group-hover:bg-cyan-500/20 transition-all">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="font-mono text-sm font-semibold text-slate-200 group-hover:text-cyan-300 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1 text-xs sm:text-sm leading-relaxed text-slate-400">
-                      {item.body}
-                    </p>
+              {/* List heading */}
+              <h3 className="mb-6 font-primary text-xl font-bold text-slate-100 sm:text-2xl">
+                What You&apos;ll Get
+              </h3>
+
+              {/* Benefit rows — compact numbered list, not SaaS cards */}
+              <div className="divide-y divide-slate-800/70 rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-sm overflow-hidden">
+                {whatYouGet.map((item, index) => (
+                  <div
+                    key={item.title}
+                    className="group flex items-start gap-4 px-5 py-4 transition-colors duration-200 hover:bg-slate-800/40 cursor-default"
+                  >
+                    {/* Cyan number badge */}
+                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-cyan-500/10 font-mono text-xs font-bold text-cyan-400 border border-cyan-500/20 group-hover:border-cyan-400/50 group-hover:bg-cyan-500/20 transition-all duration-200">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div className="min-w-0">
+                      <h4 className="font-mono text-sm font-semibold text-slate-200 group-hover:text-cyan-300 transition-colors duration-200">
+                        {item.title}
+                      </h4>
+                      <p className="mt-1 text-xs sm:text-sm leading-relaxed text-slate-400">
+                        {item.body}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Bottom CTA */}
+              <div className="mt-7">
+                <a
+                  href="/hvac-demo"
+                  className="group inline-flex items-center gap-1.5 font-mono text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400"
+                >
+                  See the kind of website your business could have
+                  <span
+                    className="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                    aria-hidden
+                  >
+                    →
+                  </span>
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>

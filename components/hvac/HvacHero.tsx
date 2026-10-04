@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import HvacAssetSlot from "./HvacAssetSlot";
+import Image from "next/image";
 
 const HvacHero = () => {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
@@ -163,28 +163,36 @@ const HvacHero = () => {
             </motion.p>
           </div>
 
-          {/* Right Column — Professional Asset Slot */}
+          {/* Right Column — Hero Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="min-w-0"
           >
-            {/* ASSET SLOT: Hero HVAC Website Preview — 16:10 landscape (Polished product mockup of an HVAC contractor homepage with emergency tap-to-call and estimate form) */}
             <div className="relative">
-              {/* Back ambient glow */}
+              {/* Ambient glow behind the image */}
               <div className="pointer-events-none absolute -inset-4 rounded-2xl bg-gradient-to-r from-cyan-500/15 to-purple-500/15 blur-2xl -z-10" />
 
-              <HvacAssetSlot
-                title="Hero Website Mockup Slot"
-                aspectRatio="aspect-[16/10]"
-                comment="// ASSET SLOT: High-resolution desktop mockup of a conversion-focused HVAC contractor homepage"
-                badge="16:10 Desktop"
-                icon="browser"
-              />
+              {/* Image container — portrait crop, matching visual language */}
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-slate-700/80 shadow-2xl shadow-black/60">
+              {/* Image container — 16:10 landscape crop, matching visual language */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-700/80 shadow-2xl shadow-black/60">
+                <Image
+                  src="/images/hvac/hero-hvac-technician.jpg"
+                  alt="HVAC technician servicing an air conditioning unit on a rooftop"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  className="object-cover object-center"
+                  className="object-cover object-[40%_50%]"
+                />
+                {/* Subtle dark gradient overlay — bottom fade to anchor the image */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+              </div>
             </div>
             <p className="mt-3 text-center font-mono text-[11px] text-slate-500">
-              Desktop preview container &mdash; ready for high-resolution layout capture
+              Professional HVAC technician &mdash; the kind of service your website should represent
             </p>
           </motion.div>
         </div>
