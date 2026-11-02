@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const CheckIcon = () => (
   <svg
     className="w-4 h-4 text-blue-600 flex-shrink-0"
@@ -29,10 +31,10 @@ const PhoneIcon = () => (
 );
 
 const trustPillars = [
-  "Licensed & Insured",
-  "Same-Day Service Available",
-  "Upfront, Flat-Rate Pricing",
-  "All Major Brands Serviced",
+  "Professional HVAC Service",
+  "DFW Homeowners Served",
+  "Clear Pricing Conversation",
+  "Common System Types",
 ];
 
 export default function EgHero() {
@@ -84,8 +86,8 @@ export default function EgHero() {
             {/* Sub-copy */}
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
               Evergreen Heating &amp; Air serves DFW homeowners with honest,
-              professional HVAC service — fast response, transparent pricing,
-              and work done right the first time.
+              professional HVAC service — dependable communication,
+              transparent pricing, and work done right the first time.
             </p>
 
             {/* CTA buttons */}
@@ -97,11 +99,11 @@ export default function EgHero() {
                 Get a Free Estimate
               </a>
               <a
-                href="tel:+15550001234"
+                href="tel:+12145550147"
                 className="inline-flex justify-center items-center gap-2 px-7 py-3.5 rounded-xl border-2 border-gray-300 text-gray-800 font-bold text-base hover:border-blue-500 hover:text-blue-700 transition-colors group"
               >
                 <PhoneIcon />
-                <span>(555) 000-1234</span>
+                <span>(214) 555-0147</span>
               </a>
             </div>
 
@@ -118,59 +120,24 @@ export default function EgHero() {
             </div>
           </div>
 
-          {/* ── Right: Image placeholder ── */}
+          {/* ── Right: Hero photo ── */}
           <div className="w-full relative">
-            {/*
-              IMAGE PLACEHOLDER
-              ─────────────────────────────────────────────────────────────
-              Replace this entire <div> block with a Next.js <Image> once
-              the photo is ready. Recommended photo specs:
-                • Subject:  HVAC technician working on an outdoor AC unit
-                            or inside a home, in professional uniform
-                • Aspect:   4:3 or 3:2 landscape (min. 1200 × 900 px)
-                • Format:   .webp or .jpg, placed in /public/images/hvac/
-                • Alt text: "Evergreen Heating & Air technician servicing
-                            an HVAC unit in a Dallas–Fort Worth home"
-              ─────────────────────────────────────────────────────────────
-            */}
-            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 aspect-[4/3] border-2 border-dashed border-gray-300 flex flex-col items-center justify-center gap-4 p-8 text-center">
-              {/* Camera icon */}
-              <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center">
-                <svg
-                  className="w-8 h-8 text-blue-400"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"
-                  />
-                </svg>
-              </div>
-              {/* Label */}
-              <div>
-                <p className="text-sm font-semibold text-gray-500">
-                  Hero Photo — Coming Soon
-                </p>
-                <p className="text-xs text-gray-400 mt-1 max-w-[220px] leading-relaxed">
-                  HVAC technician photo &nbsp;·&nbsp; 4:3 landscape &nbsp;·&nbsp; min. 1200 × 900 px
-                </p>
-              </div>
 
-              {/* Floating badge — will sit naturally on the real photo */}
-              <div className="absolute bottom-5 left-5 flex items-center gap-2 bg-white rounded-xl px-4 py-2.5 shadow-lg border border-gray-100">
-                <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-gray-200 shadow-sm bg-gray-100">
+              <Image
+                src="/images/hvac/pexels-jose-andres-pacheco-cortes-3641213-5463581.jpg"
+                alt="Evergreen Heating & Air technician servicing an outdoor HVAC unit"
+                fill
+                priority
+                className="object-cover w-full h-full"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+              />
+
+              {/* Floating badge */}
+              <div className="absolute bottom-5 left-5 flex items-center gap-2 bg-white/90 rounded-xl px-4 py-2.5 shadow-lg border border-gray-200 backdrop-blur-sm">
+                <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
                   <svg
-                    className="w-4 h-4 text-green-600"
+                    className="w-4 h-4 text-blue-600"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     aria-hidden="true"
@@ -183,8 +150,8 @@ export default function EgHero() {
                   </svg>
                 </div>
                 <div className="leading-tight">
-                  <p className="text-[11px] font-bold text-gray-900">Licensed &amp; Insured</p>
-                  <p className="text-[10px] text-gray-500">Texas HVAC Contractor</p>
+                  <p className="text-[11px] font-bold text-gray-900">Serving DFW</p>
+                  <p className="text-[10px] text-gray-500">Dallas–Fort Worth Area</p>
                 </div>
               </div>
             </div>

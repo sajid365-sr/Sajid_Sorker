@@ -1,39 +1,39 @@
 const reasons = [
   {
-    title: "Licensed & Insured",
+    title: "Clear Service Information",
     description:
-      "Our technicians are fully licensed by the state and carry comprehensive liability insurance on every job.",
-    icon: "🛡️",
-  },
-  {
-    title: "Transparent Pricing",
-    description:
-      "You receive a written quote before work starts. What we quote is what you pay — no surprise charges.",
+      "Straightforward descriptions of each HVAC service so you know what to expect.",
     icon: "📋",
   },
   {
-    title: "Experienced Technicians",
+    title: "Straightforward Process",
     description:
-      "Our team has hands-on experience servicing all major HVAC brands and system types.",
+      "Request an estimate, discuss the issue, review the recommendation, and schedule the service.",
     icon: "🔧",
   },
   {
-    title: "Emergency Response",
+    title: "Easy Estimate Requests",
     description:
-      "HVAC emergencies don't follow a 9-to-5 schedule. We offer after-hours service when you need it most.",
-    icon: "🚨",
+      "Submit a quick form or call to request a no-obligation estimate for your home.",
+    icon: "📞",
   },
   {
-    title: "Satisfaction Guarantee",
+    title: "Residential HVAC Focus",
     description:
-      "If you're not satisfied with our work, we'll make it right — that's our commitment to every customer.",
-    icon: "✅",
-  },
-  {
-    title: "Local & Family-Owned",
-    description:
-      "We live and work in this community. Your comfort is personal to us, not just another service ticket.",
+      "Heating and cooling services tailored to homeowners and residential properties.",
     icon: "🏠",
+  },
+  {
+    title: "Local Service Area",
+    description:
+      "Serving homeowners across Dallas–Fort Worth and surrounding communities.",
+    icon: "📍",
+  },
+  {
+    title: "Simple Communication",
+    description:
+      "We explain recommended work and answer your questions before proceeding.",
+    icon: "💬",
   },
 ];
 
@@ -50,8 +50,8 @@ export default function EgWhyChooseUs() {
             Why Homeowners Choose Us
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-base">
-            We've built our reputation on showing up, doing the job right, and
-            being honest with every customer — every time.
+            Learn what to expect when you request HVAC service in the
+            Dallas–Fort Worth area.
           </p>
         </div>
 

@@ -1,27 +1,27 @@
 const steps = [
   {
     step: "01",
-    title: "Request an Estimate",
+    title: "Request Service",
     description:
-      "Fill out our quick online form or call us directly. Tell us what's going on with your system and we'll schedule a visit.",
+      "Tell us about your HVAC issue using the estimate form or give us a call.",
   },
   {
     step: "02",
-    title: "We Diagnose the Problem",
+    title: "Discuss Your Needs",
     description:
-      "A licensed technician arrives at your home, inspects your system, and gives you a clear, written diagnosis with upfront pricing.",
+      "Share the problem and the type of heating or cooling service you need.",
   },
   {
     step: "03",
-    title: "We Get to Work",
+    title: "Review Your Options",
     description:
-      "Once you approve the quote, we perform the repair or installation using quality parts and proven techniques.",
+      "Understand the recommended service and next steps before anything begins.",
   },
   {
     step: "04",
-    title: "You Enjoy Comfort",
+    title: "Schedule Your Service",
     description:
-      "We clean up after ourselves, walk you through what was done, and make sure your system is running perfectly before we leave.",
+      "Choose a suitable time to arrange the service for your home.",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function EgHowItWorks() {
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-base">
             Getting your HVAC system serviced by Evergreen is simple and
-            stress-free. Here's what to expect.
+            stress-free. Here&rsquo;s what to expect.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export default function EgHowItWorks() {
             href="#estimate"
             className="inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors shadow-md"
           >
-            Start Step 1 — Get a Free Estimate
+            Request Service
           </a>
         </div>
       </div>

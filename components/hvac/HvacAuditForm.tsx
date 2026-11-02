@@ -3,11 +3,16 @@
 import { FormEvent, useState } from "react";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+type FormStatus =
+  | "idle"
+  | "loading"
+  | "success"
+  | "validation-error"
+  | "configuration-error"
+  | "send-error";
 
 const HvacAuditForm = () => {
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<FormStatus>("idle");
   const [invalid, setInvalid] = useState({ name: false, email: false });
   const [focused, setFocused] = useState<string | null>(null);
 
@@ -22,59 +27,46 @@ const HvacAuditForm = () => {
 
     setInvalid({ name: nameInvalid, email: emailInvalid });
     if (nameInvalid || emailInvalid) {
-      setStatus("error");
+      setStatus("validation-error");
       return;
     }
 
-    const payload = {
-      from_name,
-      from_email,
-      subject: "HVAC website audit request",
-      message: [
-        `Name: ${from_name}`,
-        `Business Name: ${data.get("business") || ""}`,
-        `Email: ${from_email}`,
-        `Current Website: ${data.get("website") || ""}`,
-        `Phone (Optional): ${data.get("phone") || ""}`,
-        "",
-        `Notes / Challenges: ${data.get("notes") || ""}`,
-      ].join("\n"),
-    };
-
-    const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+    const serviceId = process.env.NEXT_PUBLIC_HVAC_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_HVAC_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_HVAC_PUBLIC_KEY;
 
     if (!serviceId || !templateId || !publicKey) {
-      window.location.href = `mailto:sajid@sajidsorker.com?subject=${encodeURIComponent(
-        "HVAC website audit request"
-      )}&body=${encodeURIComponent(payload.message)}`;
+      setStatus("configuration-error");
       return;
     }
+
+    const templateParams = {
+      from_name,
+      from_email,
+      business_name: String(data.get("business") || "").trim(),
+      phone: String(data.get("phone") || "").trim(),
+      website: String(data.get("website") || "").trim(),
+      service_interest:
+        String(data.get("service_interest") || "").trim() ||
+        "Free HVAC website audit",
+      message: String(data.get("notes") || "").trim(),
+    };
 
     setStatus("loading");
     try {
       const { default: emailjs } = await import("@emailjs/browser");
-      const result = await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          name: from_name,
-          email: from_email,
-          message: payload.message,
-          title: "HVAC Website Audit Request",
-        },
-        publicKey
-      );
+      const result = await emailjs.send(serviceId, templateId, templateParams, {
+        publicKey,
+      });
 
       if (result.status === 200) {
         setStatus("success");
         form.reset();
       } else {
-        setStatus("error");
+        setStatus("send-error");
       }
     } catch {
-      setStatus("error");
+      setStatus("send-error");
     }
   };
 
@@ -88,7 +80,13 @@ const HvacAuditForm = () => {
       onSubmit={handleSubmit}
       className="relative rounded-xl border border-slate-800 bg-slate-900/60 p-6 backdrop-blur-md hover:border-cyan-400/30 transition-colors duration-300 sm:p-8 shadow-2xl"
       noValidate
-      aria-describedby={status === "error" ? "hvac-audit-error" : undefined}
+      aria-describedby={
+        status === "validation-error" ||
+        status === "configuration-error" ||
+        status === "send-error"
+          ? "hvac-audit-error"
+          : undefined
+      }
     >
       {/* Corner accents */}
       <div className="absolute -top-px -left-px w-4 h-4 border-l-2 border-t-2 border-cyan-400/60 rounded-tl-xl pointer-events-none" />
@@ -145,6 +143,37 @@ const HvacAuditForm = () => {
               <span className="absolute bottom-0 left-0 right-0 h-[2px] rounded-full bg-gradient-to-r from-cyan-400 to-purple-400" />
             )}
           </div>
+        </label>
+
+        {/* Service interest (Optional) */}
+        <label className="block sm:col-span-2">
+          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-300">
+            What would you like help with?{" "}
+            <span className="text-slate-500 font-normal lowercase">
+              (optional)
+            </span>
+          </span>
+          <select
+            name="service_interest"
+            defaultValue=""
+            className={`${fieldBase} ${fieldNormal}`}
+          >
+            <option value="" className="bg-slate-900">
+              Select an area of interest
+            </option>
+            <option value="New HVAC website" className="bg-slate-900">
+              New HVAC website
+            </option>
+            <option value="Website redesign" className="bg-slate-900">
+              Website redesign
+            </option>
+            <option value="Improve website inquiries" className="bg-slate-900">
+              Improve website inquiries
+            </option>
+            <option value="Not sure" className="bg-slate-900">
+              Not sure — I would like an audit
+            </option>
+          </select>
         </label>
 
         {/* Email (Required) */}
@@ -246,7 +275,7 @@ const HvacAuditForm = () => {
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
               </svg>
-              Reviewing…
+              Sending request…
             </>
           ) : (
             <>
@@ -270,9 +299,33 @@ const HvacAuditForm = () => {
           ✓ Received. I will review your site and follow up by email within 24&ndash;48 hours.
         </p>
       )}
-      {status === "error" && (
+      {status === "validation-error" && (
         <p id="hvac-audit-error" className="mt-4 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 font-mono text-sm text-red-400" role="alert">
-          ✗ Please provide your name and a valid email, or email sajid@sajidsorker.com directly.
+          ✗ Please provide your name and a valid email address.
+        </p>
+      )}
+      {status === "configuration-error" && (
+        <p id="hvac-audit-error" className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 font-mono text-sm text-amber-200" role="alert">
+          Email submission is not configured right now. Please email{" "}
+          <a
+            href="mailto:sajid@sajidsorker.com"
+            className="underline underline-offset-2"
+          >
+            sajid@sajidsorker.com
+          </a>{" "}
+          directly.
+        </p>
+      )}
+      {status === "send-error" && (
+        <p id="hvac-audit-error" className="mt-4 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 font-mono text-sm text-red-400" role="alert">
+          We couldn&apos;t send your request. Please try again or email{" "}
+          <a
+            href="mailto:sajid@sajidsorker.com"
+            className="underline underline-offset-2"
+          >
+            sajid@sajidsorker.com
+          </a>{" "}
+          directly.
         </p>
       )}
     </form>

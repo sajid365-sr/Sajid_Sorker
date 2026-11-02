@@ -2,13 +2,17 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { whatYouGet, visitorNeeds } from "./hvacContent";
 
 const HvacFeatures = () => {
   return (
     <>
       {/* ─── 2. WHAT I BUILD ─── */}
-      <section id="services" className="scroll-mt-20 relative bg-slate-950 py-16 sm:py-20 lg:py-24">
+      <section
+        id="services"
+        className="scroll-mt-20 relative bg-slate-950 py-16 sm:py-20 lg:py-24"
+      >
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           {/* Section Header */}
           <motion.div
@@ -25,13 +29,13 @@ const HvacFeatures = () => {
               Everything Your HVAC Website Needs
             </h2>
             <p className="mt-3 font-mono text-sm text-slate-500">
-              // Everything your HVAC website needs to turn visitors into inquiries.
+              {"//"} Everything your HVAC website needs to turn visitors into
+              inquiries.
             </p>
           </motion.div>
 
           {/* ── Two-column layout: Large Visual Asset left + "What You'll Get" list right ── */}
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:items-start">
-
             {/* ── LEFT: Visual Asset Slot (Sticky on Desktop) ── */}
             <motion.div
               initial={{ opacity: 0, y: 25 }}
@@ -48,51 +52,19 @@ const HvacFeatures = () => {
                  * ASSET SLOT: HVAC WEBSITE PREVIEW — Real screenshot of the final HVAC demo homepage showing the hero, services, CTA, and quote/request flow. Prefer 16:10 landscape.
                  */}
                 <div className="group relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-900 shadow-2xl shadow-black/60">
-                  {/* Browser top chrome */}
-                  <div className="flex items-center justify-between border-b border-slate-800 bg-slate-900/90 px-4 py-2.5">
-                    <div className="flex items-center gap-2">
-                      <div className="flex gap-1.5">
-                        <span className="h-2.5 w-2.5 rounded-full bg-slate-700" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-slate-700" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-slate-700" />
-                      </div>
-                      <div className="ml-2 flex items-center gap-1.5 rounded-md bg-slate-950 px-3 py-0.5 font-mono text-[10px] text-slate-500 border border-slate-800/60">
-                        <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-                        <span>evergreen-hvac.demo</span>
-                      </div>
-                    </div>
-                    <span className="rounded bg-slate-800/80 px-2 py-0.5 font-mono text-[10px] font-semibold text-cyan-400 border border-slate-700/60">
-                      16:10 Landscape
-                    </span>
-                  </div>
-
-                  {/* Placeholder canvas */}
-                  <div className="absolute inset-x-0 bottom-0 top-[37px] flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 text-center">
-                    {/* Subtle grid pattern */}
-                    <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] [background-size:36px_36px]" />
-
-                    {/* Screen Icon */}
-                    <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 text-cyan-400 shadow-inner">
-                      <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <rect x="2" y="3" width="20" height="14" rx="2" strokeWidth={1.5} />
-                        <path strokeLinecap="round" d="M8 21h8M12 17v4" strokeWidth={1.5} />
-                      </svg>
-                    </div>
-
-                    {/* Slot Label */}
-                    <div className="relative z-10 space-y-1">
-                      <p className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-200">
-                        HVAC WEBSITE PREVIEW
-                      </p>
-                      <p className="font-mono text-[11px] text-slate-500">
-                        Full desktop homepage screenshot showing hero, services &amp; quote CTA
-                      </p>
-                    </div>
-                  </div>
+                  <Image
+                    src="/images/hvac/features-preview-desktop.jpg"
+                    alt="Evergreen Heating & Air demo homepage — desktop view showing the hero section, services list, and estimate request form"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 640px"
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <p className="mt-3 text-center font-mono text-[11px] text-slate-500">
-                Desktop layout preview &mdash; shows complete lead generation structure
+                Desktop layout preview &mdash; shows complete lead generation
+                structure
               </p>
             </motion.div>
 
@@ -178,7 +150,10 @@ const HvacFeatures = () => {
             </h2>
 
             <p className="text-base leading-relaxed text-slate-400 sm:text-lg">
-              When heating or cooling fails, people aren&apos;t casually browsing. They need an emergency solution. If they can&apos;t immediately tell what you offer, whether you service their town, or how to reach a technician right now, they click back to Google.
+              When heating or cooling fails, people aren&apos;t casually
+              browsing. They need an emergency solution. If they can&apos;t
+              immediately tell what you offer, whether you service their town,
+              or how to reach a technician right now, they click back to Google.
             </p>
 
             <div className="space-y-3 pt-2">
@@ -201,7 +176,8 @@ const HvacFeatures = () => {
             </div>
 
             <p className="font-mono text-xs text-slate-500 pt-1">
-              Clear answers turn clicks into phone calls. Confusion sends homeowners to your local competitor.
+              Clear answers turn clicks into phone calls. Confusion sends
+              homeowners to your local competitor.
             </p>
           </motion.div>
 
@@ -224,31 +200,15 @@ const HvacFeatures = () => {
               {/*
                * ASSET SLOT: MOBILE HVAC WEBSITE — Real screenshot of the final HVAC demo website displayed inside a smartphone mockup. Prefer 9:16 portrait screenshot.
                */}
-              <div className="group relative aspect-[9/16] w-full overflow-hidden rounded-[1.75rem] border border-slate-800 bg-slate-900 shadow-inner">
-                {/* Visual placeholder content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 p-6 text-center">
-                  {/* Subtle grid pattern */}
-                  <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] [background-size:24px_24px]" />
-
-                  {/* Phone Screen Icon */}
-                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 text-cyan-400 shadow-inner">
-                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <rect x="7" y="2" width="10" height="20" rx="2" strokeWidth={1.5} />
-                      <path strokeLinecap="round" d="M11 18h2" strokeWidth={1.5} />
-                    </svg>
-                  </div>
-
-                  {/* Slot Label */}
-                  <div className="relative z-10 space-y-1">
-                    <p className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-200">
-                      MOBILE HVAC WEBSITE
-                    </p>
-                    <p className="font-mono text-[10px] text-slate-500">
-                      9:16 portrait screenshot inside phone frame
-                    </p>
-                  </div>
-                </div>
-              </div>
+               <div className="group relative aspect-[9/16] w-full overflow-hidden rounded-[1.75rem] border border-slate-800 bg-slate-900 shadow-inner">
+                 <Image
+                   src="/images/hvac/features-mobile-portrait.jpg"
+                   alt="Portrait mobile screenshot of the fictional Evergreen Heating & Air website demo, showing its mobile navigation, estimate button, and service content"
+                   fill
+                   sizes="(max-width: 640px) 75vw, 340px"
+                   className="object-cover object-top"
+                 />
+               </div>
             </div>
 
             {/* ── Surrounding Simple Labels (Simple labels only, NOT fake UI) ── */}

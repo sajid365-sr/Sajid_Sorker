@@ -11,7 +11,7 @@ type HvacCtasProps = {
 
 const HvacCtas = ({
   primaryHref = "#audit",
-  secondaryHref = "/hvac-demo",
+  secondaryHref = "/evergreen-heating-air",
   primaryLabel = "Get a Free Website Audit",
   secondaryLabel = "See the Demo",
   align = "start",
