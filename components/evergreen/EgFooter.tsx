@@ -5,9 +5,34 @@ const footerLinks = {
     "Heating Repair",
     "Heating Installation",
     "HVAC Maintenance",
-    "Indoor Air Quality",
+    "Emergency HVAC Service",
   ],
-  Company: ["About Us", "Service Areas", "Contact", "Privacy Policy"],
+  Company: ["About Us", "Service Areas", "Contact"],
+  "Service Areas": ["Dallas", "Plano", "Frisco", "Irving", "Arlington", "Richardson"],
+};
+
+const footerLinkHrefs: Record<string, Record<string, string>> = {
+  Services: {
+    "AC Repair": "#services",
+    "AC Installation": "#services",
+    "Heating Repair": "#services",
+    "Heating Installation": "#services",
+    "HVAC Maintenance": "#services",
+    "Emergency HVAC Service": "#services",
+  },
+  Company: {
+    "About Us": "#why-us",
+    "Service Areas": "#service-areas",
+    Contact: "#estimate",
+  },
+  "Service Areas": {
+    Dallas: "#service-areas",
+    Plano: "#service-areas",
+    Frisco: "#service-areas",
+    Irving: "#service-areas",
+    Arlington: "#service-areas",
+    Richardson: "#service-areas",
+  },
 };
 
 export default function EgFooter() {
@@ -28,33 +53,27 @@ export default function EgFooter() {
               </span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
-              Licensed and insured HVAC services for homeowners in [City] and
-              surrounding areas. Honest work. Fair pricing. Guaranteed comfort.
+              Heating and cooling services for homeowners across the
+              Dallas–Fort Worth area. Honest work. Transparent pricing.
             </p>
             <div className="mt-6 space-y-1">
               <p className="text-sm">
                 <span className="text-gray-500">Phone: </span>
-                <a href="tel:+15550001234" className="text-white hover:underline">
-                  (555) 000-1234
+                <a href="tel:+12145550147" className="text-white hover:underline">
+                  (214) 555-0147
                 </a>
               </p>
               <p className="text-sm">
                 <span className="text-gray-500">Email: </span>
                 <a
-                  href="mailto:info@evergreenair.com"
+                  href="mailto:hello@example.com"
                   className="text-white hover:underline"
                 >
-                  info@evergreenair.com
+                  hello@example.com
                 </a>
               </p>
-              <p className="text-sm">
-                <span className="text-gray-500">Address: </span>
-                <span className="text-white">123 Main St, [City], [State]</span>
-              </p>
-              <p className="text-sm">
-                <span className="text-gray-500">Hours: </span>
-                <span className="text-white">Mon–Fri 8am–6pm · Emergency 24/7</span>
-              </p>
+              
+              
             </div>
           </div>
 
@@ -68,7 +87,7 @@ export default function EgFooter() {
                 {links.map((link) => (
                   <li key={link}>
                     <a
-                      href="#"
+                      href={footerLinkHrefs[category][link]}
                       className="text-sm hover:text-white transition-colors"
                     >
                       {link}
@@ -85,7 +104,7 @@ export default function EgFooter() {
           <p>
             &copy; {year} Evergreen Heating &amp; Air. All rights reserved.
           </p>
-          <p>Licensed HVAC Contractor · [License # Placeholder]</p>
+          <p>Evergreen Heating & Air is a fictional business used for website demonstration purposes.</p>
         </div>
       </div>
     </footer>

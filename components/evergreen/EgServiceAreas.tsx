@@ -1,17 +1,10 @@
-// Placeholder service area data — replace with actual cities when known
 const areas = [
-  "Springfield",
-  "Riverside",
-  "Maplewood",
-  "Cedar Falls",
-  "Lakewood",
-  "Brookfield",
-  "Hillcrest",
-  "Greenview",
-  "Oak Park",
-  "Fairview",
-  "Westside",
-  "Northgate",
+  "Dallas",
+  "Plano",
+  "Frisco",
+  "Irving",
+  "Arlington",
+  "Richardson",
 ];
 
 export default function EgServiceAreas() {
@@ -25,12 +18,12 @@ export default function EgServiceAreas() {
               Where We Serve
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Service Areas
+              Serving Homes Across Dallas–Fort Worth
             </h2>
             <p className="text-gray-500 mb-8 text-base">
-              We proudly serve homeowners in [City] and the surrounding communities.
-              Not sure if we cover your area? Give us a call — we're happy to let
-              you know.
+              We proudly serve homeowners in Dallas–Fort Worth, Texas and the
+              surrounding communities. Not sure if we cover your area? Give us a
+              call — we&rsquo;re happy to let you know.
             </p>
 
             {/* City grid */}
@@ -48,34 +41,29 @@ export default function EgServiceAreas() {
               ))}
             </div>
 
-            <p className="mt-6 text-sm text-gray-400 italic">
-              * Area names are placeholders — update with actual service cities.
-            </p>
+            {/* CTA */}
+            <div className="mt-8">
+              <a
+                href="#estimate"
+                className="inline-flex items-center px-6 py-3 rounded-lg border border-blue-600 text-blue-600 font-semibold text-sm hover:bg-blue-600 hover:text-white transition-colors"
+              >
+                Request Service
+              </a>
+            </div> 
           </div>
 
-          {/* Right: Map placeholder */}
-          <div className="rounded-2xl overflow-hidden bg-gray-100 aspect-[4/3] flex items-center justify-center border border-gray-200">
-            <div className="text-center text-gray-400 px-6">
-              <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-gray-200 flex items-center justify-center">
-                <svg
-                  className="w-8 h-8 text-gray-400"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                  />
-                </svg>
-              </div>
-              <p className="text-sm font-medium">Map Placeholder</p>
-              <p className="text-xs text-gray-400 mt-1">
-                Embed Google Maps with service area pins here
-              </p>
-            </div>
+          {/* Right: OpenStreetMap embed */}
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-gray-200 shadow-sm">
+            <iframe
+              title="OpenStreetMap showing Dallas–Fort Worth metro area"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-97.1%2C32.6%2C-96.5%2C33.1&amp;layer=mapnik"
+              width="100%"
+              height="100%"
+              className="absolute inset-0 w-full h-full"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+            />
           </div>
         </div>
       </div>

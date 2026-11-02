@@ -1,28 +1,28 @@
 const trustItems = [
   {
-    icon: "🛡️",
-    label: "Licensed & Insured",
-    sub: "Fully certified technicians",
+    icon: "📍",
+    label: "Dallas–Fort Worth Area",
+    sub: "Serving DFW homeowners",
   },
   {
     icon: "📞",
-    label: "24/7 Emergency Service",
-    sub: "We answer when you call",
+    label: "Request a Free Estimate",
+    sub: "No obligation to proceed",
   },
   {
-    icon: "💰",
-    label: "Upfront Pricing",
-    sub: "No hidden fees, ever",
-  },
-  {
-    icon: "⚡",
-    label: "Same-Day Available",
-    sub: "Fast response times",
+    icon: "💬",
+    label: "Pricing Discussion",
+    sub: "Talk costs before work begins",
   },
   {
     icon: "🔧",
-    label: "All Brands Serviced",
-    sub: "We work on any system",
+    label: "Common System Types",
+    sub: "Residential heating and cooling",
+  },
+  {
+    icon: "📋",
+    label: "Clear Service Process",
+    sub: "Request → Visit → Review → Complete",
   },
 ];
 

@@ -1,12 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 const HvacDemoSection = () => {
   return (
-    <section id="demo" className="scroll-mt-20 relative overflow-hidden border-y border-slate-800 bg-slate-900/40 py-16 sm:py-20 lg:py-24">
+    <section
+      id="demo"
+      className="scroll-mt-20 relative overflow-hidden border-y border-slate-800 bg-slate-900/40 py-16 sm:py-20 lg:py-24"
+    >
       {/* Background glow orbs */}
       <div className="pointer-events-none absolute top-1/3 left-1/4 h-96 w-96 rounded-full bg-cyan-500/10 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-1/3 right-1/4 h-96 w-96 rounded-full bg-blue-500/10 blur-[140px]" />
@@ -69,11 +73,29 @@ const HvacDemoSection = () => {
 
                 {/* Page URL Label */}
                 <div className="flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-950 px-4 py-1 font-mono text-xs text-slate-400">
-                  <svg className="h-3.5 w-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <rect x="3" y="11" width="18" height="11" rx="2" strokeWidth={1.5} />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 11V7a5 5 0 0110 0v4" />
+                  <svg
+                    className="h-3.5 w-3.5 text-cyan-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="3"
+                      y="11"
+                      width="18"
+                      height="11"
+                      rx="2"
+                      strokeWidth={1.5}
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M7 11V7a5 5 0 0110 0v4"
+                    />
                   </svg>
-                  <span>https://sajidsorker.com/hvac-demo</span>
+                  <span>https://sajidsorker.com/evergreen-heating-air</span>
                 </div>
 
                 <span className="hidden sm:inline-block rounded bg-slate-800 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-cyan-400 border border-slate-700">
@@ -82,36 +104,17 @@ const HvacDemoSection = () => {
               </div>
 
               {/*
-               * ASSET SLOT: LIVE DEMO SCREENSHOT — Full-page screenshot of `/hvac-demo`. Prefer a wide desktop screenshot.
+               * ASSET SLOT: LIVE DEMO SCREENSHOT — Full-page screenshot of `/evergreen-heating-air`. Prefer a wide desktop screenshot.
                */}
-              <div className="group relative aspect-[16/10] w-full overflow-hidden bg-slate-950">
-                {/* Visual placeholder content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 text-center">
-                  {/* Subtle grid pattern */}
-                  <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] [background-size:40px_40px]" />
-
-                  {/* Browser/Display Icon */}
-                  <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 shadow-inner">
-                    <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <rect x="2" y="3" width="20" height="14" rx="2" strokeWidth={1.5} />
-                      <path strokeLinecap="round" d="M8 21h8M12 17v4" strokeWidth={1.5} />
-                    </svg>
-                  </div>
-
-                  {/* Slot Label */}
-                  <div className="relative z-10 space-y-1.5 max-w-md">
-                    <p className="font-mono text-sm font-semibold uppercase tracking-wider text-slate-200">
-                      LIVE DEMO SCREENSHOT
-                    </p>
-                    <p className="font-mono text-xs text-slate-400">
-                      Wide desktop screenshot of the complete Evergreen Heating &amp; Air demo homepage
-                    </p>
-                    <p className="font-mono text-[11px] text-slate-600">
-                      16:10 wide desktop ratio &middot; Replace with full-page screenshot of /hvac-demo
-                    </p>
-                  </div>
-                </div>
-              </div>
+               <div className="group relative aspect-[16/10] w-full overflow-hidden border border-slate-700/80 bg-slate-900 shadow-2xl shadow-black/60">
+                 <Image
+                   src="/images/hvac/demo-hero-desktop.jpg"
+                   alt="Desktop screenshot of the fictional Evergreen Heating & Air website demo, showing its homepage hero and service information"
+                   fill
+                   sizes="(max-width: 640px) 100vw, (max-width: 1280px) 90vw, 1152px"
+                   className="object-cover object-top"
+                 />
+               </div>
             </div>
           </div>
         </motion.div>
@@ -125,12 +128,23 @@ const HvacDemoSection = () => {
           className="mt-10 flex flex-col sm:flex-row items-center gap-5"
         >
           <Link
-            href="/hvac-demo"
+            href="/evergreen-heating-air"
             className="hvac-cta-primary inline-flex min-h-[52px] w-full sm:w-auto items-center justify-center gap-2 rounded-lg px-8 font-mono text-sm font-semibold tracking-wide text-white shadow-lg shadow-cyan-500/20 transition-all hover:shadow-cyan-500/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-400"
           >
             <span>View Live Demo</span>
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
             </svg>
           </Link>
           <p className="font-mono text-xs text-slate-500 text-center sm:text-left">

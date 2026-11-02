@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Evergreen Heating & Air | HVAC Services",
+  title: "Evergreen Heating & Air | HVAC Services in Dallas–Fort Worth",
   description:
-    "Professional HVAC installation, repair, and maintenance services. Serving homeowners across the region with honest, reliable heating and air conditioning solutions.",
+    "Explore AC repair, heating, installation, and HVAC maintenance services for homes across the Dallas–Fort Worth area.",
 };
 
 export default function EvergreenLayout({

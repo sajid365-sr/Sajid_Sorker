@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const HvacBeforeAfter = () => {
   return (
@@ -32,6 +33,10 @@ const HvacBeforeAfter = () => {
           <p className="mt-3 text-base leading-relaxed text-slate-400 sm:text-lg">
             Same service, completely different structure. The goal is not a prettier online brochure &mdash; it is a fast, conversion-focused page local homeowners can actually use when they need HVAC service immediately.
           </p>
+          <p className="mt-3 rounded-lg border border-amber-500/30 bg-amber-500/5 px-4 py-3 font-mono text-xs text-amber-200">
+            Illustrative concept only. These images do not show a real client
+            website redesign or case study.
+          </p>
         </motion.div>
 
         {/* ── Desktop: Two Large Side-by-Side Panels ── */}
@@ -54,47 +59,22 @@ const HvacBeforeAfter = () => {
                   </h3>
                 </div>
                 <span className="font-mono text-xs text-slate-500">
-                  Typical Contractor Site
+                  Illustrative Outdated-Site Concept
                 </span>
               </div>
 
               {/*
                * ASSET SLOT: BEFORE WEBSITE SCREENSHOT — Screenshot of an intentionally outdated HVAC contractor website. Prefer 16:10 landscape.
                */}
-              <div className="group relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-950 shadow-inner">
-                {/* Visual placeholder container */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-slate-950 via-slate-900/90 to-slate-950 p-6 text-center">
-                  {/* Subtle grid pattern */}
-                  <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:linear-gradient(to_right,#94a3b8_1px,transparent_1px),linear-gradient(to_bottom,#94a3b8_1px,transparent_1px)] [background-size:32px_32px]" />
-
-                  {/* Browser chrome hint */}
-                  <div className="absolute top-0 inset-x-0 flex items-center gap-1.5 border-b border-slate-800/80 bg-slate-900/80 px-3.5 py-2">
-                    <span className="h-2 w-2 rounded-full bg-slate-700" />
-                    <span className="h-2 w-2 rounded-full bg-slate-700" />
-                    <span className="h-2 w-2 rounded-full bg-slate-700" />
-                    <span className="ml-2 font-mono text-[10px] text-slate-600">outdated-contractor-site.demo</span>
-                  </div>
-
-                  {/* Icon */}
-                  <div className="relative z-10 mt-4 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-800 bg-slate-900/80 text-slate-500">
-                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth={1.5} />
-                      <circle cx="8.5" cy="8.5" r="1.5" strokeWidth={1.5} />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 15l-5-5L5 21" />
-                    </svg>
-                  </div>
-
-                  {/* Slot Label */}
-                  <div className="relative z-10 space-y-1">
-                    <p className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-400">
-                      BEFORE WEBSITE SCREENSHOT
-                    </p>
-                    <p className="font-mono text-[11px] text-slate-600">
-                      16:10 landscape &middot; Outdated contractor site preview
-                    </p>
-                  </div>
-                </div>
-              </div>
+               <div className="group relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-950 shadow-inner">
+                 <Image
+                   src="/images/hvac/before-outdated-website.jpg"
+                   alt="Fictional outdated HVAC website concept labeled as an illustrative example, not a real client website"
+                   fill
+                   sizes="(max-width: 1024px) 100vw, 540px"
+                   className="object-cover object-top"
+                 />
+               </div>
 
               {/* Explanatory points */}
               <ul className="mt-6 space-y-2.5 font-mono text-xs text-slate-400">
@@ -139,46 +119,22 @@ const HvacBeforeAfter = () => {
                   </h3>
                 </div>
                 <span className="font-mono text-xs font-semibold text-cyan-400">
-                  Conversion-Focused Redesign
+                  Illustrative Demo Redesign
                 </span>
               </div>
 
               {/*
                * ASSET SLOT: AFTER WEBSITE SCREENSHOT — Screenshot of the polished final HVAC demo website. Prefer 16:10 landscape.
                */}
-              <div className="group relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-cyan-500/30 bg-slate-950 shadow-2xl shadow-black/60">
-                {/* Visual placeholder container */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 text-center">
-                  {/* Subtle grid pattern */}
-                  <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] [background-size:32px_32px]" />
-
-                  {/* Browser chrome hint */}
-                  <div className="absolute top-0 inset-x-0 flex items-center gap-1.5 border-b border-cyan-500/20 bg-slate-900/90 px-3.5 py-2">
-                    <span className="h-2 w-2 rounded-full bg-cyan-400/80" />
-                    <span className="h-2 w-2 rounded-full bg-cyan-400/40" />
-                    <span className="h-2 w-2 rounded-full bg-cyan-400/40" />
-                    <span className="ml-2 font-mono text-[10px] text-cyan-300/80">evergreen-heating.demo</span>
-                  </div>
-
-                  {/* Icon */}
-                  <div className="relative z-10 mt-4 flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 shadow-inner">
-                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <rect x="2" y="3" width="20" height="14" rx="2" strokeWidth={1.5} />
-                      <path strokeLinecap="round" d="M8 21h8M12 17v4" strokeWidth={1.5} />
-                    </svg>
-                  </div>
-
-                  {/* Slot Label */}
-                  <div className="relative z-10 space-y-1">
-                    <p className="font-mono text-xs font-semibold uppercase tracking-wider text-cyan-300">
-                      AFTER WEBSITE SCREENSHOT
-                    </p>
-                    <p className="font-mono text-[11px] text-slate-400">
-                      16:10 landscape &middot; High-converting HVAC redesign preview
-                    </p>
-                  </div>
-                </div>
-              </div>
+               <div className="group relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-cyan-500/30 bg-slate-950 shadow-2xl shadow-black/60">
+                 <Image
+                   src="/images/hvac/after-evergreen-redesign.jpg"
+                   alt="Desktop screenshot of the fictional Evergreen Heating & Air demo redesign, shown as an illustrative concept rather than a client case study"
+                   fill
+                   sizes="(max-width: 1024px) 100vw, 540px"
+                   className="object-cover object-top"
+                 />
+               </div>
 
               {/* Explanatory points */}
               <ul className="mt-6 space-y-2.5 font-mono text-xs text-slate-300">
@@ -220,7 +176,7 @@ const HvacBeforeAfter = () => {
             </p>
           </div>
           <Link
-            href="/hvac-demo"
+            href="/evergreen-heating-air"
             className="hvac-cta-primary inline-flex min-h-[50px] shrink-0 items-center justify-center gap-2 rounded-lg px-7 font-mono text-sm font-semibold tracking-wide text-white shadow-lg shadow-cyan-500/20 transition-all hover:shadow-cyan-500/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-400"
           >
             <span>See the Live Demo</span>
