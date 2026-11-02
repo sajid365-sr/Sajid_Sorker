@@ -3,62 +3,67 @@
 }
 
 .hvac-page {
-  --hvac-ink: #142433;
-  --hvac-body: #4f4a44;
-  --hvac-muted: #6d665d;
-  --hvac-paper: #f3eee6;
-  --hvac-paper-2: #ebe4d8;
-  --hvac-line: #ddd4c8;
-  --hvac-copper: #c45c26;
-  --hvac-copper-dark: #a84b1c;
+  /* Dark portfolio-brand token system */
+  --hvac-bg: #020617; /* slate-950 */
+  --hvac-surface: rgba(15, 23, 42, 0.5); /* slate-900/50 glass */
+  --hvac-surface-2: #0f172a; /* slate-900 solid */
+  --hvac-border: #1e293b; /* slate-800 */
+  --hvac-border-hover: rgba(34, 211, 238, 0.3); /* cyan-400/30 */
+  --hvac-ink: #e2e8f0; /* slate-200 */
+  --hvac-body: #94a3b8; /* slate-400 */
+  --hvac-muted: #64748b; /* slate-500 */
+  --hvac-comment: #475569; /* slate-600 */
+  --hvac-cyan: #22d3ee; /* cyan-400 */
+  --hvac-cyan-glow: rgba(34, 211, 238, 0.2); /* cyan-400/20 */
+  --hvac-purple: #a78bfa; /* purple-400 */
+  --hvac-emerald: #34d399; /* emerald-400 */
   overflow-x: hidden;
   color: var(--hvac-ink);
-  background: var(--hvac-paper);
+  background: var(--hvac-bg);
 }
 
 .hvac-page * {
-  font-family: "Open Sans", "Urbanist", sans-serif;
+  font-family: "Poppins", "Open Sans", sans-serif;
 }
 
 .hvac-page h1,
 .hvac-page h2,
 .hvac-page h3,
 .hvac-page .font-primary {
-  font-family: Urbanist, Poppins, sans-serif;
-  letter-spacing: -0.03em;
-}
-
-.hvac-page h1 {
-  letter-spacing: -0.038em;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .hvac-page ::selection {
-  background: #1a2a3a;
-  color: #f7f4ef;
+  background: rgba(34, 211, 238, 0.25);
+  color: #e2e8f0;
 }
 
+/* Eyebrow label — replaces copper uppercase with cyan mono style */
 .hvac-page .hvac-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--hvac-copper);
+  font-family: "Chivo Mono", monospace;
+  color: var(--hvac-cyan);
 }
 
 .hvac-page .hvac-eyebrow::before {
   content: "";
-  width: 1.75rem;
+  width: 1.5rem;
   height: 1px;
-  background: var(--hvac-copper);
+  background: var(--hvac-cyan);
 }
 
+/* Body lede text */
 .hvac-page .hvac-lede {
   max-width: 36rem;
   font-size: 1.0625rem;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--hvac-body);
 }
 
@@ -68,23 +73,30 @@
   }
 }
 
+/* Section padding */
 .hvac-page .hvac-section {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 @media (min-width: 1024px) {
   .hvac-page .hvac-section {
-    padding-top: 6.25rem;
-    padding-bottom: 6.25rem;
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
   }
 }
 
+/* Primary CTA button — gradient from cyan to blue */
 .hvac-page .hvac-cta-primary {
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset;
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .hvac-page .hvac-cta-primary:hover {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
   transform: translateY(-1px);
 }
 
@@ -100,12 +112,14 @@
   }
 }
 
+/* Section heading size */
 .hvac-page .hvac-heading {
-  font-family: Urbanist, Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.85rem;
   font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
+  color: #e2e8f0; /* slate-200 */
 }
 
 @media (min-width: 640px) {
@@ -114,14 +128,28 @@
   }
 }
 
+/* FAQ accordion */
 .hvac-page details summary {
   list-style: none;
 }
 
 .hvac-page details + details {
-  border-top: 1px solid var(--hvac-line);
+  border-top: 1px solid var(--hvac-border);
 }
 
 .hvac-page details[open] summary {
-  color: var(--hvac-ink);
+  color: var(--hvac-cyan);
+}
+
+/* Scrollbar */
+.hvac-page::-webkit-scrollbar {
+  width: 0.5rem;
+  background: var(--hvac-bg);
+}
+.hvac-page::-webkit-scrollbar-thumb {
+  background: var(--hvac-border);
+  border-radius: 0.25rem;
+}
+.hvac-page::-webkit-scrollbar-thumb:hover {
+  background: var(--hvac-muted);
 }
