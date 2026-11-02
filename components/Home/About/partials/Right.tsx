@@ -21,6 +21,7 @@ const Right = () => {
               fill={true}
               src="/images/model/sajid-sorker.jpg"
               alt="Sajid Sorker"
+              sizes="(max-width: 350px) 100vw, 350px"
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
 
