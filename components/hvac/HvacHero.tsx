@@ -174,8 +174,6 @@ const HvacHero = () => {
               {/* Ambient glow behind the image */}
               <div className="pointer-events-none absolute -inset-4 rounded-2xl bg-gradient-to-r from-cyan-500/15 to-purple-500/15 blur-2xl -z-10" />
 
-              {/* Image container — portrait crop, matching visual language */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-slate-700/80 shadow-2xl shadow-black/60">
               {/* Image container — 16:10 landscape crop, matching visual language */}
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-slate-700/80 shadow-2xl shadow-black/60">
                 <Image
@@ -184,7 +182,6 @@ const HvacHero = () => {
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 45vw"
-                  className="object-cover object-center"
                   className="object-cover object-[40%_50%]"
                 />
                 {/* Subtle dark gradient overlay — bottom fade to anchor the image */}
